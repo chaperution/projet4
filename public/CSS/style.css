@@ -1,0 +1,123 @@
+body {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.chapters {
+	font-family: 'IM Fell English SC', serif, 'Times New Roman';
+}
+
+h1 {
+	font-family: 'Pacifico', serif, 'Arial Black';
+	font-size: 3.2em;
+}
+
+#authorName {
+	font-family: 'Slabo 27px', serif, 'Times New Roman';
+}
+
+#menu a {
+	font-family: 'Roboto', serif, 'Times New Roman';
+}
+
+/* ____________ NAV ____________ */
+
+#menu {
+	margin: 0;
+	border: 2px solid #3c6382;
+	height: 65px;
+	background-color: #3c6382;
+}
+
+#menu ul {
+	display: flex;
+	list-style-type: none;
+	float: right;
+}
+
+#menu li {
+	margin-right: 30px;
+}
+
+#menu a {
+	font-weight: bold;
+	font-size: 1.6em;
+	color: white;
+}
+
+#menu a:hover {
+	border-bottom: 3px solid white;
+	cursor: pointer;
+	padding-bottom: 5px;
+}
+
+/* _____________ HEAD _______________ */
+
+#header_Img {
+	position: relative;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#header_Img img {
+	cursor: pointer;
+}
+
+#header_content {
+	position: absolute;
+	top: 207px;
+	left: 655px;
+	text-align: center;
+	margin: 0;
+}
+
+#authorName {
+	font-weight: bold;
+	font-size: 2em;
+	font-style: italic;
+}
+
+/* ______________ POSTS ______________ */
+
+.framePost {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.post {
+	border: 2px solid #3c6382;
+	margin-top: 20px;
+	width: 1200px;
+}
+
+.headPost {
+	border: 2px solid #3c6382;
+	background-color: #3c6382;
+	color: white;
+}
+
+.chapters {
+	padding: 35px;
+}
+
+.chapters a {
+	text-decoration: none;
+}
+
+
+
+
+
+/* _________________ FOOTER ________________ */
+
+footer {
+	border: 1px solid #3c6382;
+	background-color: #3c6382;
+	margin-top: 20px;
+	height: 75px;
+}
+
+footer p {
+	color: white;
+}
