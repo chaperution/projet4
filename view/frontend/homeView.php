@@ -1,12 +1,14 @@
 <?php $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
-<h1>Retrouvez les derniers chapitres publiés de "Billet simple pour l'Alaska"</h1>
+<div>
+	<img src="../../../../public/img/head_home.jpeg" alt="bureau avec une machine à écrire et un livre" />
+	<h1>Retrouvez les derniers chapitres publiés de "Billet simple pour l'Alaska"</h1>
+</div>
 
 <?php
 while ($data = $posts->fetch()) {
 	if (!empty($data)) {
-		// récupère le contenu du billet dans le fichier billet.php
 ?>
 		<div class="news">
 		<h3>
