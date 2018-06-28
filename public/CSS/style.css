@@ -3,7 +3,7 @@ body {
 	margin: 0 auto;
 }
 
-.chapters {
+.chapters, .head-full-post {
 	font-family: 'IM Fell English SC', serif, 'Times New Roman';
 }
 
@@ -16,7 +16,7 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a, button a {
+#menu a, #returnLink, .headPost, #commentsFrame h3 {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -108,7 +108,7 @@ h1 {
 }
 
 
-.post a {
+.post a, #returnLink a {
 	padding: 15px;
 	outline: none;
 	border-radius: 15px;
@@ -128,7 +128,43 @@ h1 {
 	padding: 10px;
 }
 
+.fullPost {
+	border: 1px solid white;
+	width: 1000px;
+}
 
+#commentsFrame {
+	border: 1px solid grey;
+	width: 1000px;
+	margin: 30px;
+}
+
+#commentsFrame h3 {
+	font-size: 1.4em;
+}
+
+#postFrame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#returnLink {
+	margin: 30px;
+}
+
+.head-full-post {
+	font-size: 1.8em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.fullPost em {
+	font-style: italic;
+	float: right;
+	color: #222f3e;
+	font-size: 1.1em;
+}
 
 /* _________________ FOOTER ________________ */
 
