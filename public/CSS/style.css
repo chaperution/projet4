@@ -16,7 +16,7 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a {
+#menu a, button a {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -41,7 +41,7 @@ h1 {
 
 #menu a {
 	font-weight: bold;
-	font-size: 1.6em;
+	font-size: 1.4em;
 	color: white;
 }
 
@@ -71,6 +71,10 @@ h1 {
 	margin: 0;
 }
 
+.headPost {
+	padding: 7px;
+}
+
 #authorName {
 	font-weight: bold;
 	font-size: 2em;
@@ -98,14 +102,31 @@ h1 {
 }
 
 .chapters {
-	padding: 35px;
+	padding: 20px;
+	color: #222f3e;
+	text-align: justify;
 }
 
-.chapters a {
+
+.post a {
+	padding: 15px;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #0a3d62;
+	background-color: #0a3d62;
+	color: white;
+	font-size: 1.1em;
 	text-decoration: none;
 }
 
+.readMore {
+	text-align: right;
+	margin: 20px;
+}
 
+.content {
+	padding: 10px;
+}
 
 
 

@@ -16,13 +16,18 @@ while ($data = $posts->fetch()) {
 				<em>le <?= $data['date_fr']; ?></em>
 			</h3>
 		</div>
-		<p class="chapters">
-		<?=
-			nl2br(htmlspecialchars($data['content']));
-		?>
-		<br />
-		<em><a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Lire la suite ...</a></em>
-		</p>
+		<div class="content">
+			<p class="chapters">
+			<?php
+				$extract = substr($data['content'], 0, 1000);
+				echo nl2br(htmlspecialchars($extract)) . " ...";
+			?>
+			<br />
+				<div class="readMore">
+					<a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Lire la suite ...</a>
+				</div>
+			</p>
+		</div>
 	</div>
 
 	
