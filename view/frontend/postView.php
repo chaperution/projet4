@@ -25,8 +25,21 @@ while ($comment = $comments->fetch()) {
 <?php 
 }
 ?>
+
+	</div>
+	<div id="commentForm">
+		<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
+		<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+			<label for="author">Pseudo :</label></br>
+			<input type="text" name="author" id="author" size="40"/></br>
+			<label for="comment">Commentaire :</label></br>
+			<textarea id="comment" name="comment" cols="50" rows="10"></textarea> 
+			</br>
+			<input type="submit" value="Envoyer"/>
+		</form>
 	</div>
 </div>
+
 
 <?php $content = ob_get_clean(); ?>
 

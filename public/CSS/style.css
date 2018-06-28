@@ -16,7 +16,7 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a, #returnLink, .headPost, #commentsFrame h3 {
+#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -165,6 +165,33 @@ h1 {
 	color: #222f3e;
 	font-size: 1.1em;
 }
+
+#commentForm {
+	margin: 30px;
+}
+
+#commentForm p {
+	text-align: center;
+}
+
+#commentForm p, #commentForm label, input[type="submit"] {
+	font-size: 1.2em;
+}
+
+#commentForm input[type="submit"] {
+	margin: 15px;
+	padding: 10px;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #0a3d62;
+	background-color: #0a3d62;
+	color: white;
+}
+
+#commentForm input[type="text"], #commentForm textarea  {
+	margin-top: 20px;
+}
+
 
 /* _________________ FOOTER ________________ */
 
