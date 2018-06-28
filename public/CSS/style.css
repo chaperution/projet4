@@ -16,7 +16,7 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm {
+#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -91,7 +91,7 @@ h1 {
 
 .post {
 	border: 2px solid #3c6382;
-	margin-top: 20px;
+	margin: 25px 0 25px 0;
 	width: 1200px;
 }
 
@@ -105,6 +105,7 @@ h1 {
 	padding: 20px;
 	color: #222f3e;
 	text-align: justify;
+	font-size: 1.1em;
 }
 
 
@@ -134,7 +135,6 @@ h1 {
 }
 
 #commentsFrame {
-	border: 1px solid grey;
 	width: 1000px;
 	margin: 30px;
 }
@@ -166,12 +166,24 @@ h1 {
 	font-size: 1.1em;
 }
 
+.commentBlock {
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.commentBlock p {
+	font-size: 1.1em;
+}
+
 #commentForm {
 	margin: 30px;
 }
 
 #commentForm p {
 	text-align: center;
+	margin-bottom: 25px;
 }
 
 #commentForm p, #commentForm label, input[type="submit"] {
@@ -191,6 +203,7 @@ h1 {
 #commentForm input[type="text"], #commentForm textarea  {
 	margin-top: 20px;
 }
+
 
 
 /* _________________ FOOTER ________________ */

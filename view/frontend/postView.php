@@ -20,8 +20,10 @@
 <?php
 while ($comment = $comments->fetch()) {
 ?>
-		<p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?= $comment['date_fra']; ?></p>
-		<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
+		<div class="commentBlock">
+			<p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?= $comment['date_fra']; ?></p>
+			<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
+		</div>
 <?php 
 }
 ?>
@@ -33,7 +35,7 @@ while ($comment = $comments->fetch()) {
 			<label for="author">Pseudo :</label></br>
 			<input type="text" name="author" id="author" size="40"/></br>
 			<label for="comment">Commentaire :</label></br>
-			<textarea id="comment" name="comment" cols="50" rows="10"></textarea> 
+			<textarea id="comment" name="comment" cols="85" rows="10"></textarea> 
 			</br>
 			<input type="submit" value="Envoyer"/>
 		</form>
