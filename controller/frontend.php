@@ -44,9 +44,9 @@ function addMember($pseudo, $pass, $mail) {
 	$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
 	// vérification validité du pseudo et du mail p/r à la bdd
-	if (strtolower($_POST['pseudo']) == strtolower($pseudo['pseudo']) {
+	if (strtolower($_POST['pseudo']) == strtolower($pseudo['pseudo'])) {
 		throw new Exception("Ce pseudo est déjà utilisé !");
-	} elseif (strtolower($_POST['mail'])) == strtolower($mail['mail']) {
+	} elseif (strtolower($_POST['mail']) == strtolower($mail['mail'])) {
 		throw new Exception("Cette adresse mail est déjà utilisée !");
 	}
 }

@@ -25,15 +25,15 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
 	        }
 	    } 
-	    elseif ($_GET['action']) == 'addMember') {
+	    elseif ($_GET['action'] == 'addMember') {
 			if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['mail'])) {
 				if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
 					addMember($_POST['pseudo'], $_POST['pass'], $_POST['mail']);
 				} else {
-					throw new Exception('Veuillez entrer une adresse mail valide.');
+					throw new Exception('Pas d\'adresse mail valide.');
 				}
 			} else {
-				throw new Exception('Veuillez renseigner tous les champs.');
+				throw new Exception('Tous les champs ne sont pas remplis !');
 			}
 		}
 	}

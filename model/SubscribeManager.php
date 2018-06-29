@@ -14,3 +14,4 @@ class SubscribeManager extends Manager
 
         return $newMember;
     }
+}
