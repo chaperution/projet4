@@ -36,3 +36,7 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+
+
+// Hachage du mot de passe
+//$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT); + validité des autres infos

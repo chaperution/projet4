@@ -19,7 +19,7 @@
 			</nav>
 
 			<div id="header_Img">
-					<img src="public/img/headhome.jpg" alt="bureau avec une machine à écrire et un livre" />
+					<a href="index.php"><img src="public/img/headhome.jpg" alt="bureau avec une machine à écrire et un livre" /></a>
 					<div id="header_content">
 						<h1>Billet simple pour l'Alaska</h1>
 						<p id="authorName">Jean Forteroche</p>
