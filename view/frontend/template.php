@@ -12,18 +12,18 @@
 		<header>
 			<nav id="menu">
 				<ul>
-					<li><a>Accueil</a></li>
+					<li><a href="index.php">Accueil</a></li>
 					<li><a>À propos</a></li>
 					<li><a>Connexion/ Inscription</a></li>
 				</ul>
 			</nav>
 
 			<div id="header_Img">
-					<a href="index.php"><img src="public/img/headhome.jpg" alt="bureau avec une machine à écrire et un livre" /></a>
-					<div id="header_content">
-						<h1>Billet simple pour l'Alaska</h1>
-						<p id="authorName">Jean Forteroche</p>
-					</div>
+				<a href="index.php"><img src="public/img/headhome.jpg" alt="bureau avec une machine à écrire et un livre" /></a>
+				<div id="header_content">
+					<h1>Billet simple pour l'Alaska</h1>
+					<p id="authorName">Jean Forteroche</p>
+				</div>
 			</div>
 		</header>
 		<section>

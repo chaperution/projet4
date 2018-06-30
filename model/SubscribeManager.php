@@ -10,7 +10,7 @@ class SubscribeManager extends Manager
     {
         $bdd = $this->dbConnect();
         $newMember = $bdd->prepare('INSERT INTO members(pseudo, pass, mail, DATE_FORMAT(subscribe_date, "%d/%m/%Y %H:%i:%s")) VALUES (?, ?, ?, CURDATE())');
-        $newMembre->execute(array($pseudo, $pass, $mail));
+        $newMember->execute(array($pseudo, $pass, $mail));
 
         return $newMember;
     }
