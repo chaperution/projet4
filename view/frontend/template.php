@@ -14,7 +14,7 @@
 				<ul>
 					<li><a href="index.php">Accueil</a></li>
 					<li><a>À propos</a></li>
-					<li><a>Connexion/ Inscription</a></li>
+					<li><a href="index.php?action=login">Connexion/ Inscription</a></li>
 				</ul>
 			</nav>
 

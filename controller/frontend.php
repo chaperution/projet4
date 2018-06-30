@@ -4,6 +4,7 @@
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/SubscribeManager.php');
+require_once('model/LoginManager.php');
 
 function listPosts() {
     $postManager = new \projet4\Blog\Model\PostManager(); 
@@ -38,6 +39,9 @@ function addComment($postId, $author, $comment) {
 function addMember($pseudo, $pass, $mail) {
 	$subscribeManager = new \projet4\Blog\Model\SubscribeManager();
 
+	// Hachage du mot de passe
+	$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+
 	$newMember = $subscribeManager->createMember($pseudo, $pass, $mail);
 
 	// vérification validité du pseudo et du mail p/r à la bdd
@@ -46,13 +50,17 @@ function addMember($pseudo, $pass, $mail) {
 	} elseif (strtolower($_POST['mail']) == strtolower($mail['mail'])) {
 		throw new Exception("Cette adresse mail est déjà utilisée !");
 	}
+}
 
-	// Hachage du mot de passe
-	$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+function displayLogin() {
+	require('view/frontend/loginView.php');
 }
 
 function login($pseudo, $pass) {
 	$loginManager = new \projet4\Blog\Model\LoginManager();
 
-	$member = $loginManager->loginMember($pseudo, $pass);
+	$member = $loginManager->loginMember($pseudo);
+
+	// Comparaison du pass envoyé via le formulaire avec la base
+	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 }
