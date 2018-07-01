@@ -1,4 +1,4 @@
-<?php $title = "Inscrivez-vous"; ?>
+<?php $title = "Connexion"; ?>
 
 <?php ob_start(); ?>
 
@@ -7,9 +7,10 @@
 		<label for="pseudo">Pseudo</label></br>
 		<input type="text" name="pseudo" id="pseudo" required />
 		<label for="pass">Mot de passe</label></br>
-		<input type="password" name="pass" id="pass" required />
+		<input type="password" name="pass" id="pass" required /></br>
 		<input type="submit" value="Se connecter" />
 	</form>
+	<a href="index.php?action=subscribe">Pas encore inscrit? C'est par ici ;)</a>
 </div>
 
 

@@ -25,6 +25,9 @@ try {
                 throw new Exception('Aucun identifiant de billet envoyé');
 	        }
 	    } 
+	    elseif ($_GET['action'] == 'subscribe') {
+			displaySubscribe();
+		}
 	    elseif ($_GET['action'] == 'addMember') {
 			if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['mail'])) {
 				if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -35,10 +38,10 @@ try {
 			} else {
 				throw new Exception('Tous les champs ne sont pas remplis !');
 			}
-		} elseif ($_GET['action'] == 'login') {
+		} 
+		elseif ($_GET['action'] == 'login') {
 			displayLogin();
 		}
-
 	}
 	else {
 	    listPosts();

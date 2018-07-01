@@ -64,3 +64,7 @@ function login($pseudo, $pass) {
 	// Comparaison du pass envoyé via le formulaire avec la base
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 }
+
+function displaySubscribe() {
+	require('view/frontend/subscribeView.php');
+}
