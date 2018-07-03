@@ -30,9 +30,9 @@
 					</div>
 				</div>
 			</header>
-			<section>
+			
 			<?= $content ?>
-			</section>
+			
 			<footer>
 				<p>Mentions Légales</p>
 				<p>Images libres de droit</p>

@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<div class="framePost">
+<section class="framePost">
 
 <?php
 // si compte bien créé, affiche message de confirmation à l'utilisateur
@@ -45,7 +45,7 @@ while ($data = $posts->fetch()) {
 	$posts->closeCursor();
 ?>
 
-</div>
+</section>
 
 <?php $content = ob_get_clean(); ?>
 

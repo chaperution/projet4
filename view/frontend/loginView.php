@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<div id="loginFrame">
+<section id="loginFrame">
 	<div id="formBlock">
 		<form action="index.php?action=loginSubmit" method="post">
 			<label for="pseudo">Pseudo</label>
@@ -13,7 +13,7 @@
 		</form>
 		<a href="index.php?action=subscribe">Pas encore inscrit? C'est par ici ;)</a>
 	</div>
-</div>
+</section>
 
 
 <?php $content = ob_get_clean(); ?>

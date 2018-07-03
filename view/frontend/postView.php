@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 
-<div id="postFrame">
+<section id="postFrame">
 	<p id="returnLink"><a href="index.php">Retour à la liste des chapitres</a></p>
 	<div class="fullPost">
 		<div class="head-full-post">
@@ -40,7 +40,7 @@ while ($comment = $comments->fetch()) {
 			<input type="submit" value="Envoyer"/>
 		</form>
 	</div>
-</div>
+</section>
 
 
 <?php $content = ob_get_clean(); ?>
