@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <div id="loginFrame">
-	<form action="index.php?action=" method="post">
+	<form action="index.php?action=loginSubmit" method="post">
 		<label for="pseudo">Pseudo</label></br>
 		<input type="text" name="pseudo" id="pseudo" required />
 		<label for="pass">Mot de passe</label></br>

@@ -16,7 +16,16 @@
 	</form>
 </div>
 
+<?php 
+if (isset($_GET['error']) && $_GET['error'] == 'invalidUsername') {
+	echo '<p id="error">Pseudo déjà utilisé</p>';
+}
 
+if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
+	echo '<P id="error">Adresse email déjà utilisée</p>';
+}
+
+?>
 
 <?php $content = ob_get_clean(); ?>
 

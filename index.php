@@ -42,10 +42,15 @@ try {
 		elseif ($_GET['action'] == 'login') {
 			displayLogin();
 		}
+		elseif ($_GET['action'] == 'loginSubmit') {
+			loginSubmit($_POST['pseudo'], $_POST['pass']);
+		}
 	}
 	else {
 	    listPosts();
 	}
 } catch(Exception $e) { 
-    echo 'Erreur : ' . $e->getMessage();
+	//$content = '<p id="error">Erreur : ' . $e->getMessage() . '</p>';
+	//require('view/frontend/template.php');
+    //echo 'Erreur : ' . $e->getMessage();
 }

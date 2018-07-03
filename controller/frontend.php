@@ -39,30 +39,56 @@ function addComment($postId, $author, $comment) {
 function addMember($pseudo, $pass, $mail) {
 	$subscribeManager = new \projet4\Blog\Model\SubscribeManager();
 
-	// Hachage du mot de passe
-	$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+	$usernameValidity = $subscribeManager->checkPseudo($pseudo);
+	$mailValidity = $subscribeManager->checkMail($mail);
 
-	$newMember = $subscribeManager->createMember($pseudo, $pass, $mail);
-
-	// vérification validité du pseudo et du mail p/r à la bdd
-	if (strtolower($_POST['pseudo']) == strtolower($pseudo['pseudo'])) {
-		throw new Exception("Ce pseudo est déjà utilisé !");
-	} elseif (strtolower($_POST['mail']) == strtolower($mail['mail'])) {
-		throw new Exception("Cette adresse mail est déjà utilisée !");
+	if ($usernameValidity) {
+		//throw new Exception("Ce pseudo est déjà utilisé !");
+		header('Location: index.php?action=subscribe&error=invalidUsername');
 	}
+
+	if ($mailValidity) {
+		header('Location: index.php?action=subscribe&error=invalidMail');
+		//throw new Exception("Cette adresse mail est déjà utilisée !");
+	}
+
+	if (!$usernameValidity && !$mailValidity) {
+		// Hachage du mot de passe
+		$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+
+		$newMember = $subscribeManager->createMember($pseudo, $pass, $mail);
+	}	
+
+	// redirige vers page d'accueil avec le nouveau paramètre
+	header('Location: index.php?account-status=account-successfully-created');
 }
 
 function displayLogin() {
 	require('view/frontend/loginView.php');
 }
 
-function login($pseudo, $pass) {
+function loginSubmit($pseudo, $pass) {
 	$loginManager = new \projet4\Blog\Model\LoginManager();
 
 	$member = $loginManager->loginMember($pseudo);
 
-	// Comparaison du pass envoyé via le formulaire avec la base
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
+
+	if (!$member) {
+        throw new Exception("Mauvais identifiant ou mot de passe !");
+    }
+    else {
+    	if ($isPasswordCorrect) {
+    		session_start();
+    		$_SESSION['id'] = $member['id'];
+    		$_SESSION['pseudo'] = $pseudo;
+    		echo 'Vous êtes connecté !';
+    		header('Refresh: 3; url=index.php');
+    	}
+        else {
+        	throw new Exception("Mauvais identifiant ou mot de passe !");
+        }
+    }
 }
 
 function displaySubscribe() {

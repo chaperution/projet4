@@ -1,3 +1,7 @@
+html, body, main {
+	height: 100%;
+}
+
 body {
 	width: 100%;
 	margin: 0 auto;
@@ -43,6 +47,7 @@ h1 {
 	font-weight: bold;
 	font-size: 1.4em;
 	color: white;
+	text-decoration: none;
 }
 
 #menu a:hover {
@@ -205,14 +210,52 @@ h1 {
 }
 
 
+/* _________________ LOGIN ________________ */
+
+#loginFrame {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 30px;
+}
+
+
+/* ________________ ERROR __________________ */
+
+#error, #success {
+	text-align: center;
+	padding: 12px 20px;
+	font-weight: bold;
+}
+
+#error {
+	color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+#success {
+	color: #155724; 
+	background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+#success a {
+	color: #0b2e13;
+	font-weight: 2em;
+}
 
 /* _________________ FOOTER ________________ */
 
 footer {
 	border: 1px solid #3c6382;
-	background-color: #3c6382;
+	background-color: red;
 	margin-top: 20px;
-	height: 75px;
+	min-height: 75px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 footer p {
