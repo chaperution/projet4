@@ -5,6 +5,11 @@
 <div class="framePost">
 
 <?php
+// si compte bien créé, affiche message de confirmation à l'utilisateur
+if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
+	echo '<p id="success">Votre compte a bien été créé. <a href="index.php?action=login">Se connecter</a></p>';
+}
+
 while ($data = $posts->fetch()) {
 	if (!empty($data)) {
 ?>

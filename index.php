@@ -42,10 +42,14 @@ try {
 		elseif ($_GET['action'] == 'login') {
 			displayLogin();
 		}
+		elseif ($_GET['action'] == 'loginSubmit') {
+			loginSubmit($_POST['pseudo'], $_POST['pass']);
+		}
 	}
 	else {
 	    listPosts();
 	}
 } catch(Exception $e) { 
+	
     echo 'Erreur : ' . $e->getMessage();
 }

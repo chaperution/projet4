@@ -1,3 +1,4 @@
+
 body {
 	width: 100%;
 	margin: 0 auto;
@@ -16,7 +17,8 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p {
+#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
+#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -43,6 +45,7 @@ h1 {
 	font-weight: bold;
 	font-size: 1.4em;
 	color: white;
+	text-decoration: none;
 }
 
 #menu a:hover {
@@ -53,20 +56,26 @@ h1 {
 
 /* _____________ HEAD _______________ */
 
-#header_Img {
+#headerFrame {
 	position: relative;
-	margin-top: 20px;
-	text-align: center;
+	margin: 20px auto;
+	max-width: 1200px;
 }
 
-#header_Img a {
+#headerImg {
+	width: 1200px;
+	height: 450px;
+}
+
+
+#headerImg a {
 	cursor: pointer;
 }
 
 #header_content {
 	position: absolute;
-	top: 207px;
-	left: 655px;
+	top: 185px;
+	left: 325px;
 	text-align: center;
 	margin: 0;
 }
@@ -205,6 +214,56 @@ h1 {
 }
 
 
+/* _________________ LOGIN ________________ */
+
+#loginFrame {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 30px;
+
+}
+
+#formBlock{
+	border: 1px solid grey;
+	padding: 75px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+#formBlock a {
+	text-decoration: none;
+	font-size: 1.1em;
+}
+
+#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
+	margin-bottom: 20px;
+}
+
+
+/* ________________ ERROR __________________ */
+
+#error, #success {
+	text-align: center;
+	padding: 12px 20px;
+	font-weight: bold;
+}
+
+#error {
+	color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+#success {
+	color: #155724; 
+	background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+#success a {
+	color: #0b2e13;
+	font-weight: 2em;
+}
 
 /* _________________ FOOTER ________________ */
 
@@ -212,7 +271,11 @@ footer {
 	border: 1px solid #3c6382;
 	background-color: #3c6382;
 	margin-top: 20px;
-	height: 75px;
+	min-height: 75px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
 footer p {
