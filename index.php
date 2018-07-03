@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require('controller/frontend.php');
 try {
@@ -32,3 +33,16 @@ try {
 } catch(Exception $e) { 
     echo 'Erreur : ' . $e->getMessage();
 }
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Billet simple pour l'Alaska</title>
+</head>
+<body>
+
+	
+</body>
+</html>
+>>>>>>> parent of 6959e26... Merge branch 'home'

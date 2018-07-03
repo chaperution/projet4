@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 
@@ -36,3 +37,5 @@ function addComment($postId, $author, $comment)
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
+=======
+>>>>>>> parent of 6959e26... Merge branch 'home'
