@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+html, body, main {
+	height: 100%;
+}
+>>>>>>> 3d33c2ae2afe075900dec8ba5406c61f8e0e67de
 
 body {
 	width: 100%;
@@ -221,6 +227,7 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 	margin: 30px;
+<<<<<<< HEAD
 
 }
 
@@ -237,6 +244,8 @@ h1 {
 
 #formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
 	margin-bottom: 20px;
+=======
+>>>>>>> 3d33c2ae2afe075900dec8ba5406c61f8e0e67de
 }
 
 
@@ -269,7 +278,7 @@ h1 {
 
 footer {
 	border: 1px solid #3c6382;
-	background-color: #3c6382;
+	background-color: red;
 	margin-top: 20px;
 	min-height: 75px;
 	left: 0;

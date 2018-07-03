@@ -2,6 +2,7 @@
 
 <?php ob_start(); ?>
 
+
 <section id="loginFrame">
 	<div id="formBlock">
 		<form action="index.php?action=loginSubmit" method="post">
@@ -14,6 +15,7 @@
 		<a href="index.php?action=subscribe">Pas encore inscrit? C'est par ici ;)</a>
 	</div>
 </section>
+
 
 
 <?php $content = ob_get_clean(); ?>

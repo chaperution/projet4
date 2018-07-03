@@ -28,7 +28,9 @@ if (isset($_GET['error']) && $_GET['error'] == 'invalidMail') {
 
 ?>
 
+
 </section>
+
 
 <?php $content = ob_get_clean(); ?>
 

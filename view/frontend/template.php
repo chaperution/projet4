@@ -20,6 +20,7 @@
 					</ul>
 				</nav>
 
+
 				<div id="headerFrame">
 					<div id="headerImg">
 						<a href="index.php"><img src="public/img/headhome.jpg" alt="bureau avec une machine à écrire et un livre" /></a>
@@ -30,9 +31,9 @@
 					</div>
 				</div>
 			</header>
-			
+
 			<?= $content ?>
-			
+
 			<footer>
 				<p>Mentions Légales</p>
 				<p>Images libres de droit</p>

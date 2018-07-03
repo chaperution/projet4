@@ -44,17 +44,14 @@ function addMember($pseudo, $pass, $mail) {
 
 	if ($usernameValidity) {
 		//throw new Exception("Ce pseudo est déjà utilisé !");
-		header('Location: index.php?action=subscribe&error=invalidUsername');
-		
+		header('Location: index.php?action=subscribe&error=invalidUsername');	
 	}
-	print_r('usernameValidity' . $usernameValidity);
 
 	if ($mailValidity) {
 		header('Location: index.php?action=subscribe&error=invalidMail');
 		//throw new Exception("Cette adresse mail est déjà utilisée !");
-		
 	}
-	print_r('mailValidity' . $mailValidity);
+
 
 	if (!$usernameValidity && !$mailValidity) {
 		// Hachage du mot de passe
@@ -65,7 +62,7 @@ function addMember($pseudo, $pass, $mail) {
 		// redirige vers page d'accueil avec le nouveau paramètre
 		header('Location: index.php?account-status=account-successfully-created');
 	}	
-	
+
 }
 
 function displayLogin() {
