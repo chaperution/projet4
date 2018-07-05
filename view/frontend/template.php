@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link href="public/css/style.css" rel="stylesheet" /> 
 	    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Pacifico|Roboto|Slabo+27px" rel="stylesheet">
+	    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 	    <!-- ajouter meta -->
 	</head>
 
@@ -16,7 +17,15 @@
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
 						<li><a>À propos</a></li>
-						<li><a href="index.php?action=login">Connexion/ Inscription</a></li>
+						<?php
+						if (!empty($_SESSION)) {
+							echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
+							echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';
+						} else {
+							echo '<li><a href="index.php?action=login">Connexion / Inscription</a></li>';
+						}
+						?>
+						
 					</ul>
 				</nav>
 

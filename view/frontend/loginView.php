@@ -4,7 +4,7 @@
 
 
 <section id="loginFrame">
-	<div id="formBlock">
+	<div class="formBlock">
 		<form action="index.php?action=loginSubmit" method="post">
 			<label for="pseudo">Pseudo</label>
 			<input type="text" name="pseudo" id="pseudo" required /></br>

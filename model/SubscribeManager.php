@@ -27,7 +27,7 @@ class SubscribeManager extends Manager
     public function createMember($pseudo, $pass, $mail)
     {
         $bdd = $this->dbConnect();
-        $newMember = $bdd->prepare('INSERT INTO members(pseudo, pass, mail, subscribe_date) VALUES (?, ?, ?, CURDATE())');
+        $newMember = $bdd->prepare('INSERT INTO members(groups_id, pseudo, pass, mail, subscribe_date) VALUES (2, ?, ?, ?, CURDATE())');
         $newMember->execute(array($pseudo, $pass, $mail));
 
         return $newMember;

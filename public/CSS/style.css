@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-=======
-html, body, main {
-	height: 100%;
-}
->>>>>>> 3d33c2ae2afe075900dec8ba5406c61f8e0e67de
+
 
 body {
 	width: 100%;
@@ -227,27 +222,32 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 	margin: 30px;
-<<<<<<< HEAD
-
 }
 
-#formBlock{
+.formBlock {
 	border: 1px solid grey;
 	padding: 75px;
 	box-shadow: 5px 5px 5px grey;
 }
 
-#formBlock a {
+.formBlock a {
 	text-decoration: none;
 	font-size: 1.1em;
 }
 
-#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
-	margin-bottom: 20px;
-=======
->>>>>>> 3d33c2ae2afe075900dec8ba5406c61f8e0e67de
+.formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
+
 }
 
+
+/* __________________ SUBSCRIBE ___________________ */
+
+#subscribeFrame {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 30px;
+}
 
 /* ________________ ERROR __________________ */
 
@@ -278,7 +278,7 @@ h1 {
 
 footer {
 	border: 1px solid #3c6382;
-	background-color: red;
+	background-color: #3c6382;
 	margin-top: 20px;
 	min-height: 75px;
 	left: 0;

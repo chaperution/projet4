@@ -10,7 +10,7 @@ class LoginManager extends Manager
     public function loginMember($pseudo)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, pass FROM members WHERE pseudo = ?');
+        $req = $bdd->prepare('SELECT id, groups_id, pass FROM members WHERE pseudo = ?');
         $req->execute(array($pseudo));
         $member = $req->fetch();
 

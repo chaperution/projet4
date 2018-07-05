@@ -1,5 +1,9 @@
 <?php
+
+session_start();
+
 require('controller/frontend.php');
+
 try {
 	if (isset($_GET['action'])) {
 	    if ($_GET['action'] == 'listPosts') {
@@ -29,9 +33,14 @@ try {
 			displaySubscribe();
 		}
 	    elseif ($_GET['action'] == 'addMember') {
-			if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['mail'])) {
+			if (!empty($_POST['pseudo']) && !empty($_POST['pass']) && !empty($_POST['pass_confirm']) && !empty($_POST['mail'])) {
 				if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-					addMember($_POST['pseudo'], $_POST['pass'], $_POST['mail']);
+					if ($_POST['pass'] == $_POST['pass_confirm']) {
+						addMember(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']), strip_tags($_POST['mail']));
+					}
+					else {
+						throw new Exception('Les deux mots de passe ne correspondent pas.');
+					}
 				} else {
 					throw new Exception('Pas d\'adresse mail valide.');
 				}
@@ -43,7 +52,10 @@ try {
 			displayLogin();
 		}
 		elseif ($_GET['action'] == 'loginSubmit') {
-			loginSubmit($_POST['pseudo'], $_POST['pass']);
+			loginSubmit(strip_tags($_POST['pseudo']), strip_tags($_POST['pass']));
+		}
+		elseif ($_GET['action'] == 'logout') {
+			logout();
 		}
 	}
 	else {

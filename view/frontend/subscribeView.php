@@ -2,17 +2,17 @@
 
 <?php ob_start(); ?>
 
-<section>
-	<div id="subscribeFrame">
+<section id="subscribeFrame">
+	<div class="formBlock">
 		<form action="index.php?action=addMember" method="post">
 			<label for="pseudo">Pseudo</label>
-			<input type="text" name="pseudo" id="pseudo" required />
+			<input type="text" name="pseudo" id="pseudo" required /><br />
 			<label for="pass">Mot de passe</label>
-			<input type="password" name="pass" id="pass" required />
-			<label for="pass">Retapez votre mot de passe</label>
-			<input type="password" name="pass" id="pass" required />
+			<input type="password" name="pass" id="pass" required /><br />
+			<label for="pass_confirm">Retapez votre mot de passe</label>
+			<input type="password" name="pass_confirm" id="pass_confirm" required /><br />
 			<label for="mail">Adresse email</label>
-			<input type="email" name="mail" id="mail" required />
+			<input type="email" name="mail" id="mail" required /><br />
 			<input type="submit" value="S'inscrire" />
 		</form>
 	</div>

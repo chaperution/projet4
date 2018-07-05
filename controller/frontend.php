@@ -36,6 +36,10 @@ function addComment($postId, $author, $comment) {
     }
 }
 
+function displaySubscribe() {
+	require('view/frontend/subscribeView.php');
+}
+
 function addMember($pseudo, $pass, $mail) {
 	$subscribeManager = new \projet4\Blog\Model\SubscribeManager();
 
@@ -56,7 +60,7 @@ function addMember($pseudo, $pass, $mail) {
 	if (!$usernameValidity && !$mailValidity) {
 		// Hachage du mot de passe
 		$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-
+		
 		$newMember = $subscribeManager->createMember($pseudo, $pass, $mail);
 		
 		// redirige vers page d'accueil avec le nouveau paramètre
@@ -73,26 +77,40 @@ function loginSubmit($pseudo, $pass) {
 	$loginManager = new \projet4\Blog\Model\LoginManager();
 
 	$member = $loginManager->loginMember($pseudo);
+	/*var_dump($pseudo);
+	die();*/
 
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 
 	if (!$member) {
-        throw new Exception("Mauvais identifiant ou mot de passe !");
+        echo '<p>Mauvais identifiant ou mot de passe !</p>';
     }
     else {
     	if ($isPasswordCorrect) {
-    		session_start();
+    		//session_start();
     		$_SESSION['id'] = $member['id'];
     		$_SESSION['pseudo'] = $pseudo;
+    		$_SESSION['groups_id'] = $member['groups_id'];
     		echo 'Vous êtes connecté !';
-    		header('Refresh: 3; url=index.php');
+    		header('Location: index.php');
+    		// faire lien vers page profil
+    		// header('Location: profil.php?id= . $_SESSION['id']');
     	}
         else {
-        	throw new Exception("Mauvais identifiant ou mot de passe !");
+        	echo '<p>Mauvais identifiant ou mot de passe !</p>';
         }
     }
 }
 
-function displaySubscribe() {
-	require('view/frontend/subscribeView.php');
+function logout() {
+
+	$_SESSION = array();
+
+	setcookie(session_name(), '', time() - 42000);
+	
+	session_destroy();
+
+	header('Location: index.php?logout=success');
 }
+
+

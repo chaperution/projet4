@@ -1,13 +1,26 @@
-<?php $title = "Billet simple pour l'Alaska"; ?>
+<?php 
+
+$title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
 
 <section class="framePost">
 
 <?php
+
+	var_dump($_SESSION);
+	
+	
+
+
+//echo '<p>' . session_status() . '</p>';
 // si compte bien créé, affiche message de confirmation à l'utilisateur
 if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
 	echo '<p id="success">Votre compte a bien été créé. <a href="index.php?action=login">Se connecter</a></p>';
+}
+
+if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
+	echo '<p id="success">Vous êtes bien deconnecté.</a></p>';
 }
 
 while ($data = $posts->fetch()) {
