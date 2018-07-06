@@ -18,14 +18,24 @@
 		<h3>Commentaires</h3>
 
 <?php
+
 while ($comment = $comments->fetch()) {
 ?>
 		<div class="commentBlock">
 			<p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?= $comment['date_fra']; ?></p>
+
+<?php
+	
+		if (!in_array($comment['id'], $idComment)) {
+			echo '<p class="report"><a href="#"><i class="fas fa-exclamation-triangle"></i>Signaler</a></p>';
+		}
+	
+?>
 			<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
 		</div>
 <?php 
 }
+
 ?>
 
 	</div>

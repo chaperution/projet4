@@ -4,6 +4,8 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/SubscribeManager.php');
 require_once('model/LoginManager.php');
+require_once('model/ReportManager.php');
+
 
 function listPosts() {
     $postManager = new \projet4\Blog\Model\PostManager(); 
@@ -15,9 +17,11 @@ function listPosts() {
 function post() {
     $postManager = new \projet4\Blog\Model\PostManager();
     $commentManager = new \projet4\Blog\Model\CommentManager();
+    $reportManager = new \projet4\Blog\Model\ReportManager();
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
+	$idComment = $reportManager->getIdReports($_SESSION['id']);
 
     require('view/frontend/postView.php');
 }
@@ -33,6 +37,14 @@ function addComment($postId, $author, $comment) {
     else {
         header('Location: index.php?action=post&id=' . $postId . '#commentsFrame');
     }
+}
+
+function report() {
+	$reportManager = new \projet4\Blog\Model\ReportManager();
+
+	$reports = $reportManager->getIdReports($memberId);
+
+	require('view/frontend/postView.php');
 }
 
 function displaySubscribe() {

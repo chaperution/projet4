@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php 
 
 $title = "Billet simple pour l'Alaska"; ?>
@@ -10,12 +8,6 @@ $title = "Billet simple pour l'Alaska"; ?>
 
 <?php
 
-	var_dump($_SESSION);
-	
-	
-
-
-//echo '<p>' . session_status() . '</p>';
 // si compte bien créé, affiche message de confirmation à l'utilisateur
 if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-successfully-created') {
 	echo '<p id="success">Votre compte a bien été créé. <a href="index.php?action=login">Se connecter</a></p>';
@@ -65,4 +57,4 @@ while ($data = $posts->fetch()) {
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>
->>>>>>> login-signup
+

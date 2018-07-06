@@ -24,4 +24,13 @@ class CommentManager extends Manager
 
         return $affectedLines;
     }
+
+    public function getReports($memberId) {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT comment_id FROM reports WHERE member_id = ?');
+        $req->execute(array($memberId));
+        $reports = $req;
+
+        return $reports;
+    }
 }
