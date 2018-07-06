@@ -29,17 +29,25 @@ while ($comment = $comments->fetch()) {
 ?>
 
 	</div>
-	<div id="commentForm">
-		<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
-		<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
-			<label for="author">Pseudo :</label></br>
-			<input type="text" name="author" id="author" size="40"/></br>
-			<label for="comment">Commentaire :</label></br>
-			<textarea id="comment" name="comment" cols="85" rows="10"></textarea> 
-			</br>
-			<input type="submit" value="Envoyer"/>
-		</form>
-	</div>
+
+<?php 
+	if (!empty($_SESSION)) {
+?>
+		<div id="commentForm">
+			<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
+			<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+				<label for="comment">Commentaire :</label></br>
+				<textarea id="comment" name="comment" cols="85" rows="10"></textarea> 
+				</br>
+				<input type="submit" value="Envoyer"/>
+			</form>
+		</div>
+<?php
+	} else {
+		echo '<div id="info">Pour me laisser un commentaire, veuillez vous <a href="index.php?action=login">connecter</a></div>';
+	}
+?>
+	
 </section>
 
 

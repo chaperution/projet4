@@ -32,7 +32,7 @@ function addComment($postId, $author, $comment) {
         throw new Exception("Impossible d'ajouter le commentaire !");
     }
     else {
-        header('Location: index.php?action=post&id=' . $postId);
+        header('Location: index.php?action=post&id=' . $postId . '#commentsFrame');
     }
 }
 
@@ -77,8 +77,6 @@ function loginSubmit($pseudo, $pass) {
 	$loginManager = new \projet4\Blog\Model\LoginManager();
 
 	$member = $loginManager->loginMember($pseudo);
-	/*var_dump($pseudo);
-	die();*/
 
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 
@@ -103,11 +101,8 @@ function loginSubmit($pseudo, $pass) {
 }
 
 function logout() {
-
 	$_SESSION = array();
-
 	setcookie(session_name(), '', time() - 42000);
-	
 	session_destroy();
 
 	header('Location: index.php?logout=success');

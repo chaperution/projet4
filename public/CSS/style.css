@@ -249,11 +249,14 @@ h1 {
 	margin: 30px;
 }
 
-/* ________________ ERROR __________________ */
+/* ________________ ERROR / SUCCESS / INFO __________________ */
 
-#error, #success {
+#error, #success, #info {
 	text-align: center;
 	padding: 12px 20px;
+}
+
+#error a, #success a , #info a {
 	font-weight: bold;
 }
 
@@ -271,7 +274,16 @@ h1 {
 
 #success a {
 	color: #0b2e13;
-	font-weight: 2em;
+}
+
+#info {
+	color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+#info a {
+	color : #002752;
 }
 
 /* _________________ FOOTER ________________ */
