@@ -18,6 +18,9 @@
 		<h3>Commentaires</h3>
 
 <?php
+if (isset($_GET['report']) && $_GET['report'] == 'success') {
+	echo '<p id="success">Le commentaire a bien été signalé.</p>';
+}
 
 while ($comment = $comments->fetch()) {
 ?>
@@ -25,19 +28,19 @@ while ($comment = $comments->fetch()) {
 			<p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?= $comment['date_fra']; ?></p>
 
 <?php
-	
-		if (!in_array($comment['id'], $idComment)) {
-			echo '<p class="report"><a href="#"><i class="fas fa-exclamation-triangle"></i>Signaler</a></p>';
+	if (!empty($_SESSION)) {
+		if (!in_array($comment['id'], $idComment) && $comment['author'] !== $_SESSION['pseudo']) {
+			echo '<p class="report"><a href="index.php?action=report&amp;id=' . $comment['id_post'] . '&amp;comment-id=' . $comment['id'] . '"><i class="fas fa-exclamation-triangle"></i>Signaler</a></p>';
 		}
+
+	}
 	
 ?>
 			<p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
 		</div>
 <?php 
 }
-
 ?>
-
 	</div>
 
 <?php 

@@ -9,7 +9,7 @@ class CommentManager extends Manager
     public function getComments($postId)
     {
         $bdd = $this->dbConnect();
-        $comments = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, "%d/%m/%Y %H:%i:%s") AS date_fra FROM comments WHERE id_post = ? ORDER BY comment_date DESC');
+        $comments = $bdd->prepare('SELECT id, id_post, author, comment, DATE_FORMAT(comment_date, "%d/%m/%Y %H:%i:%s") AS date_fra FROM comments WHERE id_post = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
 
         return $comments;
@@ -25,12 +25,5 @@ class CommentManager extends Manager
         return $affectedLines;
     }
 
-    public function getReports($memberId) {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT comment_id FROM reports WHERE member_id = ?');
-        $req->execute(array($memberId));
-        $reports = $req;
-
-        return $reports;
-    }
+   
 }

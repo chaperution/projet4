@@ -21,7 +21,10 @@ function post() {
 
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
-	$idComment = $reportManager->getIdReports($_SESSION['id']);
+
+    if (!empty($_SESSION)) {
+    	$idComment = $reportManager->getIdReports($_SESSION['id']);
+    }
 
     require('view/frontend/postView.php');
 }
@@ -39,12 +42,15 @@ function addComment($postId, $author, $comment) {
     }
 }
 
-function report() {
+function postReport($postId, $commentId, $memberId) {
 	$reportManager = new \projet4\Blog\Model\ReportManager();
 
-	$reports = $reportManager->getIdReports($memberId);
+	$reported = $reportManager->postReports($commentId, $memberId);
 
-	require('view/frontend/postView.php');
+	header('Location: index.php?action=post&id=' . $postId . '&report=success#commentsFrame');
+	// condition de 5 reports
+	
+	
 }
 
 function displaySubscribe() {

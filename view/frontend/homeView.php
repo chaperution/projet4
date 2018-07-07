@@ -14,7 +14,7 @@ if (isset($_GET['account-status']) && $_GET['account-status'] == 'account-succes
 }
 
 if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
-	echo '<p id="success">Vous êtes bien deconnecté.</a></p>';
+	echo '<p id="success">Vous êtes bien deconnecté.</p>';
 }
 
 while ($data = $posts->fetch()) {

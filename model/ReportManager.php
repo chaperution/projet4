@@ -19,5 +19,14 @@ class ReportManager extends Manager{
         return $idComment;
     }
 
+    public function postReports($commentId, $memberId) {
+    	$bdd = $this->dbConnect();
+    	$req = $bdd->prepare('INSERT INTO reports(comment_id, member_id, report_date) VALUES(?, ?, NOW())');
+    	$reported = $req->execute(array($commentId, $memberId));
+    	//$reported = $req->fetch();
+
+    	return $reported;
+    }
+
 }
 

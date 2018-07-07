@@ -57,6 +57,9 @@ try {
 		elseif ($_GET['action'] == 'logout') {
 			logout();
 		}
+		elseif ($_GET['action'] == 'report') {
+			postReport($_GET['id'], $_GET['comment-id'], $_SESSION['id']);
+		}
 	}
 	else {
 	    listPosts();
