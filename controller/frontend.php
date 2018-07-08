@@ -125,3 +125,6 @@ function logout() {
 	header('Location: index.php?logout=success');
 }
 
+function displayAbout() {
+	require('view/frontend/aboutView.php');
+}

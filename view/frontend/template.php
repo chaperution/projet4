@@ -16,7 +16,7 @@
 				<nav id="menu">
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
-						<li><a>À propos</a></li>
+						<li><a href="index.php?action=about">À propos</a></li>
 						<?php
 						if (!empty($_SESSION)) {
 							echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';

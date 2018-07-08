@@ -17,7 +17,8 @@ h1 {
 }
 
 #menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
-#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
+#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
+.parAbout h3, .parAbout p, .parAbout li {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -258,6 +259,51 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 	margin: 30px;
+}
+
+/* ___________________ ABOUT ____________________ */
+
+#about{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.parAbout {
+	text-align: justify;
+	max-width: 1200px;
+	margin: 25px;
+	padding: 20px;
+}
+
+.parAbout h3 {
+	text-align: center;
+	font-size: 2em;
+	padding: 10px;
+}
+
+.parAbout p, .parAbout li {
+	font-size: 1.1em;
+	vertical-align: middle;
+}
+
+.parAbout ul {
+	margin-left: 30px;
+}
+
+.boldSentence {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.2em;
+}
+
+.parAbout img {
+	float: left;
+	margin-right: 40px;
+}
+
+section .parAbout:last-child p {
+	padding-top: 70px;
 }
 
 /* ________________ ERROR / SUCCESS / INFO __________________ */

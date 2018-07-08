@@ -60,6 +60,9 @@ try {
 		elseif ($_GET['action'] == 'report') {
 			postReport($_GET['id'], $_GET['comment-id'], $_SESSION['id']);
 		}
+		elseif ($_GET['action'] == 'about') {
+			displayAbout();
+		}
 	}
 	else {
 	    listPosts();
