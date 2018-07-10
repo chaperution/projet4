@@ -19,16 +19,20 @@
 						<li><a href="index.php?action=about">À propos</a></li>
 						<?php
 						if (!empty($_SESSION)) {
-							echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
-							echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';
-						} else {
-							echo '<li><a href="index.php?action=login">Connexion / Inscription</a></li>';
-						}
+                            echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
+                        }
+                      	if(!empty($_SESSION) && $_SESSION['groups_id'] == '1') {
+                            echo '<li><a href="#"><i class="fas fa-key"></i> Administration</a></li>';
+                        }
+                        if (!empty($_SESSION))  {
+                            echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';
+                        } else {
+                            echo '<li><a href="index.php?action=login">Connexion / Inscription</a></li>';
+                        }
 						?>
 						
 					</ul>
 				</nav>
-
 
 				<div id="headerFrame">
 					<div id="headerImg">
@@ -48,6 +52,8 @@
 				<p>Images libres de droit</p>
 			</footer>
 		</main>
+
+		<script src="public/js/app.js"></script>
 	</body>
 </html>
 
