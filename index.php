@@ -64,9 +64,17 @@ try {
 		elseif ($_GET['action'] == 'about') {
 			displayAbout();
 		} 
+		elseif ($_GET['action'] == 'admin-login-view') {
+			displayLoginAdmin();
+		}
+		elseif ($_GET['action'] == 'adminLogin') {
+			loginAdmin();
+		}
 		elseif ($_GET['action'] == 'admin') {
 			displayAdmin();
 		}
+
+		
 	}
 	else {
 	    listPosts();

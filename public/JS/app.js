@@ -1,3 +1,4 @@
+// Gestion des messages d'erreur et de succès
 
 var flashMessageSuccess = document.getElementById('success');
 
@@ -11,4 +12,7 @@ if (flashMessageError !== null) {
 	setTimeout(function(){flashMessageError.style.display = 'none'}, 5000);
 }
 
+
+
+//
 

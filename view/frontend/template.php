@@ -22,7 +22,7 @@
                             echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
                         }
                       	if(!empty($_SESSION) && $_SESSION['groups_id'] == '1') {
-                            echo '<li><a href="index.php?action=admin"><i class="fas fa-key"></i> Administration</a></li>';
+                            echo '<li><a href="index.php?action=admin-login-view"><i class="fas fa-key"></i> Administration</a></li>';
                         }
                         if (!empty($_SESSION))  {
                             echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';

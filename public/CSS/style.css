@@ -18,7 +18,8 @@ h1 {
 
 #menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
 #formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
-.parAbout h3, .parAbout p, .parAbout li {
+.parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
+#adminLoginFrame input[type="submit"] {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -251,7 +252,6 @@ h1 {
 
 }
 
-
 /* __________________ SUBSCRIBE ___________________ */
 
 #subscribeFrame {
@@ -309,9 +309,22 @@ section .parAbout:last-child p {
 
 /* __________________ ADMIN PANEL _______________ */
 
-#adminPanel {
-
+#adminLoginFrame {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 45px;
 }
+
+#adminLoginFrame h3 {
+	font-size: 1.8em;
+}
+
+#adminPanel {
+	display: flex;
+}
+
+
 
 /* ________________ ERROR / SUCCESS / INFO __________________ */
 

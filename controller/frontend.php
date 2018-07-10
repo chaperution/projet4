@@ -49,8 +49,6 @@ function postReport($postId, $commentId, $memberId) {
 
 	header('Location: index.php?action=post&id=' . $postId . '&report=success#commentsFrame');
 	// condition de 5 reports
-	
-	
 }
 
 function displaySubscribe() {
@@ -83,7 +81,6 @@ function addMember($pseudo, $pass, $mail) {
 		// redirige vers page d'accueil avec le nouveau paramètre
 		header('Location: index.php?account-status=account-successfully-created');
 	}	
-
 }
 
 function displayLogin() {
@@ -128,3 +125,6 @@ function logout() {
 function displayAbout() {
 	require('view/frontend/aboutView.php');
 }
+
+
+
