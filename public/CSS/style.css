@@ -306,6 +306,13 @@ section .parAbout:last-child p {
 	padding-top: 70px;
 }
 
+
+/* __________________ ADMIN PANEL _______________ */
+
+#adminPanel {
+
+}
+
 /* ________________ ERROR / SUCCESS / INFO __________________ */
 
 #error, #success, #info {

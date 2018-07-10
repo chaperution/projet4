@@ -3,6 +3,7 @@
 session_start();
 
 require('controller/frontend.php');
+require('controller/backend.php');
 
 try {
 	if (isset($_GET['action'])) {
@@ -62,6 +63,9 @@ try {
 		}
 		elseif ($_GET['action'] == 'about') {
 			displayAbout();
+		} 
+		elseif ($_GET['action'] == 'admin') {
+			displayAdmin();
 		}
 	}
 	else {
