@@ -321,7 +321,7 @@ section .parAbout:last-child p {
 	font-size: 1.8em;
 }
 
-#adminPanel h1 {
+#adminPanel h1, #createPost h1 {
 	text-align: center;
 }
 

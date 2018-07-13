@@ -7,7 +7,7 @@ $title = "Panneau d'administration"; ?>
 <section id="adminPanel">
 	<h1>Panneau d'administration</h1>
 	<div id=adminFrame>
-		<button id="writePost"><a href="#">Ecrire un article</a></button>
+		<button id="writePost"><a href="index.php?action=createPost">Ecrire un article</a></button>
 		<div id="postManage">
 			<h3 class="headPost">Gestion des Articles</h3>
 <?php

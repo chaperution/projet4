@@ -28,4 +28,12 @@ class PostManager extends Manager
         return $updated;
     }
 
+    public function createPost($title, $content) {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO posts(title, content, creation_date) VALUES (?, ?, NOW())');
+        $newPost = $req->execute(array($title, $content));
+
+        return $newPost;
+    }
+
 }

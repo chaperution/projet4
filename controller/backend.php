@@ -41,3 +41,15 @@ function submitUpdate($title, $content, $postId) {
 
 	Header('Location: index.php?action=admin');
 }
+
+function displayCreatePost() {
+	require('view/backend/createPostView.php');
+}
+
+function newPost($title, $content) {
+	$postManager = new \projet4\Blog\Model\PostManager();
+
+	$newPost = $postManager->createPost($title, $content);
+
+	Header('Location: index.php?action=admin');
+}

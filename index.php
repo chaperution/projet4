@@ -89,8 +89,16 @@ try {
 		elseif ($_GET['action'] == 'submitUpdate') {
 			submitUpdate($_POST['title'], $_POST['content'], $_GET['id']);
 		}
-
-		
+		elseif ($_GET['action'] == 'createPost') {
+			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+				displayCreatePost();
+			}
+		}
+		elseif ($_GET['action'] == 'submitPost') {
+			if (!empty($_POST['title']) && !empty($_POST['content'])) {
+				newPost($_POST['title'], $_POST['content']);
+			}
+		}
 	}
 	else {
 	    listPosts();
