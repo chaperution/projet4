@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 
 <section id="postFrame">
-	<p id="returnLink"><a href="index.php">Retour à la liste des chapitres</a></p>
+	<p class="returnLink"><a href="index.php">Retour à la liste des chapitres</a></p>
 	<div class="fullPost">
 		<div class="head-full-post">
 			<h3>

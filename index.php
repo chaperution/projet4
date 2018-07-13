@@ -81,7 +81,9 @@ try {
 		}
 		elseif ($_GET['action'] == 'updatePost') {
 			if (isset($_GET['id']) && $_GET['id'] > 0) {
-	            displayUpdate();
+				if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+					 displayUpdate();
+				}  
 	        }
 		}
 		elseif ($_GET['action'] == 'submitUpdate') {

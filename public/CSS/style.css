@@ -16,10 +16,11 @@ h1 {
 	font-family: 'Slabo 27px', serif, 'Times New Roman';
 }
 
-#menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
+#menu a, .returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
 #formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
 .parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
-#adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th {
+#adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
+#updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label  {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -119,7 +120,7 @@ h1 {
 }
 
 
-.post a, #returnLink a {
+.post a, .returnLink a {
 	padding: 15px;
 	outline: none;
 	border-radius: 15px;
@@ -159,7 +160,7 @@ h1 {
 	align-items: center;
 }
 
-#returnLink {
+.returnLink {
 	margin: 30px;
 }
 
@@ -350,8 +351,38 @@ section .parAbout:last-child p {
 	padding: 15px;
 }
 
-#updateBlock {
+#managerBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
+#updateBlock {
+	width: 1200px;
+}
+
+#updateBlock input[type="submit"] {
+	margin: 15px;
+	padding: 15px 25px 15px 25px;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #0a3d62;
+	background-color: #0a3d62;
+	color: white;
+	float: right;
+}
+
+#updateBlock input[type="text"] {
+	font-size: 1.7em;
+	margin: 20px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+#updateBlock label {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #0a3d62;
 }
 
 #adminFrame {

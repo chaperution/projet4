@@ -5,8 +5,7 @@ namespace projet4\Blog\Model;
 require_once("model/Manager.php");
 
 class PostManager extends Manager
-{
-        
+{      
     public function getPosts()
     {
         $bdd = $this->dbConnect();

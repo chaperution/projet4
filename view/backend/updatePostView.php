@@ -6,11 +6,12 @@ $title = "Panneau d'administration"; ?>
 
 <section id="adminPanel">
 	<h1>Panneau d'administration</h1>
-	<a href="index.php?action=admin">Retour au menu</a>
 	<div id="managerBlock">
+		<p class="returnLink"><a href="index.php?action=admin">Retour au menu</a></p>
 		<div id="updateBlock">
 			<form action="index.php?action=submitUpdate&amp;id=<?= $post['id']; ?>" method="post">
-				<input type="text" name="title" value="<?= $post['title'];?>" size="158" /><br/>
+				<label for="title">Titre : </label>
+				<input type="text" name="title" id="title" value="<?= $post['title'];?>" size="80" /><br/>
 				<textarea name="content" rows="40" cols="160"><?= nl2br($post['content']);?></textarea>
 				<input type="submit" value="Poster" />
 			</form>
