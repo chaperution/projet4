@@ -6,6 +6,7 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {
+        
     public function getPosts()
     {
         $bdd = $this->dbConnect();
@@ -20,4 +21,12 @@ class PostManager extends Manager
         $post = $req->fetch();
         return $post;
     }
+
+    public function updatePost($title, $content, $postId) {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE posts SET title = ?, content = ? WHERE id = ?');
+        $updated = $req->execute(array($title, $content, $postId));
+        return $updated;
+    }
+
 }

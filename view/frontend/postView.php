@@ -10,7 +10,7 @@
 				<?= htmlspecialchars($post['title']); ?>
 			</h3>
 		</div>
-		<p class="chapters"><?= nl2br(htmlspecialchars($post['content'])); ?></p>
+		<p class="chapters"><?= nl2br($post['content']); ?></p>
 		<em>le <?= $post['date_fr']; ?></em>
 	</div>
 

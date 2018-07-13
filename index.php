@@ -65,13 +65,27 @@ try {
 			displayAbout();
 		} 
 		elseif ($_GET['action'] == 'admin-login-view') {
-			displayLoginAdmin();
+			if (isset($_SESSION)) {
+				displayLoginAdmin();
+			}
 		}
 		elseif ($_GET['action'] == 'adminLogin') {
 			loginAdmin();
 		}
 		elseif ($_GET['action'] == 'admin') {
-			displayAdmin();
+			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
+				displayAdmin();
+			} else {
+				throw new Exception('Administrateur non identifié');
+			}
+		}
+		elseif ($_GET['action'] == 'updatePost') {
+			if (isset($_GET['id']) && $_GET['id'] > 0) {
+	            displayUpdate();
+	        }
+		}
+		elseif ($_GET['action'] == 'submitUpdate') {
+			submitUpdate($_POST['title'], $_POST['content'], $_GET['id']);
 		}
 
 		

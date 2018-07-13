@@ -2,8 +2,7 @@
 
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
-require_once('model/SubscribeManager.php');
-require_once('model/LoginManager.php');
+require_once('model/MemberManager.php');
 require_once('model/ReportManager.php');
 
 
@@ -56,10 +55,10 @@ function displaySubscribe() {
 }
 
 function addMember($pseudo, $pass, $mail) {
-	$subscribeManager = new \projet4\Blog\Model\SubscribeManager();
+	$memberManager = new \projet4\Blog\Model\MemberManager();
 
-	$usernameValidity = $subscribeManager->checkPseudo($pseudo);
-	$mailValidity = $subscribeManager->checkMail($mail);
+	$usernameValidity = $memberManager->checkPseudo($pseudo);
+	$mailValidity = $memberManager->checkMail($mail);
 
 	if ($usernameValidity) {
 		//throw new Exception("Ce pseudo est déjà utilisé !");
@@ -76,7 +75,7 @@ function addMember($pseudo, $pass, $mail) {
 		// Hachage du mot de passe
 		$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 		
-		$newMember = $subscribeManager->createMember($pseudo, $pass, $mail);
+		$newMember = $memberManager->createMember($pseudo, $pass, $mail);
 		
 		// redirige vers page d'accueil avec le nouveau paramètre
 		header('Location: index.php?account-status=account-successfully-created');
@@ -88,9 +87,9 @@ function displayLogin() {
 }
 
 function loginSubmit($pseudo, $pass) {
-	$loginManager = new \projet4\Blog\Model\LoginManager();
+	$memberManager = new \projet4\Blog\Model\MemberManager();
 
-	$member = $loginManager->loginMember($pseudo);
+	$member = $memberManager->loginMember($pseudo);
 
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 

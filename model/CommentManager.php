@@ -18,7 +18,6 @@ class CommentManager extends Manager
     public function postComment($postId, $author, $comment)
     {
         $bdd = $this->dbConnect();
-        // Effectuer ici la requête qui insère le message
         $comments = $bdd->prepare('INSERT INTO comments(id_post, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
         $affectedLines = $comments->execute(array($postId, $author, $comment));
 

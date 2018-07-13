@@ -19,7 +19,7 @@ h1 {
 #menu a, #returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
 #formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
 .parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
-#adminLoginFrame input[type="submit"] {
+#adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -82,7 +82,7 @@ h1 {
 }
 
 .headPost {
-	padding: 7px;
+	padding: 9px;
 }
 
 #authorName {
@@ -320,10 +320,120 @@ section .parAbout:last-child p {
 	font-size: 1.8em;
 }
 
-#adminPanel {
-	display: flex;
+#adminPanel h1 {
+	text-align: center;
 }
 
+#writePost {
+	padding: 15px;
+	margin: 10px;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #0a3d62;
+	background-color: #0a3d62;
+	color: white;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+#writePost a {
+	text-decoration: none;
+	color:  white;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.listArticle {
+	border: 1px solid black;
+	background-color: white;
+	margin-bottom: 10px;
+	padding: 15px;
+}
+
+#updateBlock {
+
+}
+
+#adminFrame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.listPanel {
+	border: 1px solid black;
+	width: 1200px;
+	margin: 10px;
+	border: 1px solid grey;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+.listPanel a {
+	text-decoration: none;
+}
+
+.fa-user-times, .fa-trash-alt, .fa-edit {
+	font-size: 1.2em;
+	margin:0 5px;
+}
+
+.fa-user-times {
+	color: #2e86de;
+}
+
+.fa-trash-alt {
+	color: red;
+}
+
+.fa-edit {
+	color: #2ecc71;
+}
+
+.nbReports {
+	float: right;
+	border: 2px solid #ff9f43;
+	border-radius: 15px;
+	margin: -8px 0 0 5px;
+	padding: 7px;
+	color: #ff9f43;
+	font-weight: bold;
+}
+
+#postManage, #commentManage, #memberManage {
+	padding: 20px;
+	color: #222f3e;
+	text-align: justify;
+	font-size: 1.1em;
+}
+
+#postManage h3, #commentManage h3, #memberManage h3 {
+	text-align: center;
+	font-size: 1.4em;
+}
+
+.linkAdmin, th {
+	color: #0a3d62;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+table {
+	width: 1250px;
+	border-collapse: collapse;
+	box-shadow: 5px 5px 5px grey;
+}
+
+td, th {
+	text-align: center;
+	border: 1px solid grey;
+	padding: 12px;
+}
+
+tr:hover :not(th) {
+	background-color: #dfe6e9;
+}
 
 
 /* ________________ ERROR / SUCCESS / INFO __________________ */

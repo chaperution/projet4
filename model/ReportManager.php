@@ -23,10 +23,15 @@ class ReportManager extends Manager{
     	$bdd = $this->dbConnect();
     	$req = $bdd->prepare('INSERT INTO reports(comment_id, member_id, report_date) VALUES(?, ?, NOW())');
     	$reported = $req->execute(array($commentId, $memberId));
-    	//$reported = $req->fetch();
 
     	return $reported;
     }
 
+    public function getReports() {
+      $bdd = $this->dbConnect();
+      $reports = $bdd->query('SELECT COUNT(*) AS nb_reports, author, comment, comment_date FROM reports INNER JOIN comments ON reports.comment_id = comments.id GROUP BY comment_id HAVING nb_reports >= 2 ORDER BY nb_reports DESC');
+
+      return $reports;
+    }
 }
 
