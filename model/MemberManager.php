@@ -49,4 +49,12 @@ class MemberManager extends Manager
 
         return $members;
     }
+
+    public function deleteMember($memberId) {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM members WHERE id = ?');
+        $deletedMember = $req->execute(array($memberId));
+
+        return $deletedMember;
+    }
 }

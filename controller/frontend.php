@@ -7,7 +7,8 @@ require_once('model/ReportManager.php');
 
 
 function listPosts() {
-    $postManager = new \projet4\Blog\Model\PostManager(); 
+    $postManager = new \projet4\Blog\Model\PostManager();
+    
     $posts = $postManager->getPosts(); 
 
     require('view/frontend/homeView.php');
@@ -47,7 +48,6 @@ function postReport($postId, $commentId, $memberId) {
 	$reported = $reportManager->postReports($commentId, $memberId);
 
 	header('Location: index.php?action=post&id=' . $postId . '&report=success#commentsFrame');
-	// condition de 5 reports
 }
 
 function displaySubscribe() {

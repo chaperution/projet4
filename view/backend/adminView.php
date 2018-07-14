@@ -15,9 +15,9 @@ $title = "Panneau d'administration"; ?>
 		if (!empty($data)) {
 ?>
 			<div class="listPanel">
-				<p><a class="linkAdmin" href="index.php?action=updatePost&amp;id=<?= $data['id'] ?>"><?= $data['title']; ?></a></p>
-				<a class="report" href="#"><i class="fas fa-trash-alt"></i></a>
-				<a class="report" href="index.php?action=updatePost&amp;id=<?= $data['id'] ?>"><i class="fas fa-edit"></i></a>
+				<p><a class="linkAdmin" href="index.php?action=updatePost&amp;id=<?= $data['id']; ?>"><?= $data['title']; ?></a></p>
+				<a class="report" href="index.php?action=deletePost&amp;id=<?= $data['id']; ?>"><i class="fas fa-trash-alt"></i></a>
+				<a class="report" href="index.php?action=updatePost&amp;id=<?= $data['id']; ?>"><i class="fas fa-edit"></i></a>
 				<p><em><?= $data['date_fr']; ?></em></p>	
 			</div>
 <?php
@@ -36,7 +36,7 @@ $title = "Panneau d'administration"; ?>
 			<div class="listPanel">
 				<p><a class="linkAdmin" href="#"><?= $report['author']; ?></a></p>
 				<p><em><?= $report['comment_date']; ?></em></p>
-				<a class="report" href="#"><i class="fas fa-trash-alt"></i></a>
+				<a class="report" href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>"><i class="fas fa-trash-alt"></i></a>
 				<p class="nbReports"><?= $report['nb_reports']; ?> signalements</p>
 				<p><?= $report['comment']; ?></p>	
 			</div>
@@ -66,7 +66,7 @@ $title = "Panneau d'administration"; ?>
 					<td><?= $member['groups_id']; ?></td>
 					<td><?= $member['pseudo']; ?></td>
 					<td><em><?= $member['date_sub']; ?></em></td>
-					<td><a class="report" href="#"><i class="fas fa-user-times"></i></a></td>
+					<td><a href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>"><i class="fas fa-user-times"></i></a></td>
 				</tr>
 <?php
 		} else {

@@ -53,3 +53,27 @@ function newPost($title, $content) {
 
 	Header('Location: index.php?action=admin');
 }
+
+function removePost($postId) {
+	$postManager = new \projet4\Blog\Model\PostManager();
+
+	$deletedPost = $postManager->deletePost($postId);
+
+	Header('Location: index.php?action=admin');
+}
+
+function removeComment($commentId) {
+	$commentManager = new \projet4\Blog\Model\CommentManager();
+
+	$deletedComment = $commentManager->deleteComment($commentId);
+
+	Header('Location: index.php?action=admin');
+}
+
+function removeMember($memberId) {
+	$memberManager = new \projet4\Blog\Model\MemberManager();
+
+	$deletedMember = $memberManager->deleteMember($memberId);
+
+	Header('Location: index.php?action=admin');	
+}

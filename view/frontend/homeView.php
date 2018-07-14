@@ -50,7 +50,10 @@ while ($data = $posts->fetch()) {
 }
 
 	$posts->closeCursor();
+
 ?>
+
+
 
 </section>
 

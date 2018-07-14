@@ -84,7 +84,9 @@ try {
 				if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
 					 displayUpdate();
 				}  
-	        }
+	        } else {
+				throw new Exception('Administrateur non identifié');
+			}
 		}
 		elseif ($_GET['action'] == 'submitUpdate') {
 			submitUpdate($_POST['title'], $_POST['content'], $_GET['id']);
@@ -92,12 +94,23 @@ try {
 		elseif ($_GET['action'] == 'createPost') {
 			if (isset($_SESSION) && $_SESSION['groups_id'] == '1') {
 				displayCreatePost();
+			} else {
+				throw new Exception('Administrateur non identifié');
 			}
 		}
 		elseif ($_GET['action'] == 'submitPost') {
 			if (!empty($_POST['title']) && !empty($_POST['content'])) {
 				newPost($_POST['title'], $_POST['content']);
 			}
+		}
+		elseif ($_GET['action'] == 'deletePost') {
+			removePost($_GET['id']);
+		}
+		elseif ($_GET['action'] == 'deleteComment') {
+			removeComment($_GET['id']);
+		}
+		elseif ($_GET['action'] == 'deleteMember') {
+			removeMember($_GET['id']);
 		}
 	}
 	else {

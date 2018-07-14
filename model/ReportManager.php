@@ -29,9 +29,10 @@ class ReportManager extends Manager{
 
     public function getReports() {
       $bdd = $this->dbConnect();
-      $reports = $bdd->query('SELECT COUNT(*) AS nb_reports, author, comment, comment_date FROM reports INNER JOIN comments ON reports.comment_id = comments.id GROUP BY comment_id HAVING nb_reports >= 2 ORDER BY nb_reports DESC');
+      $reports = $bdd->query('SELECT COUNT(*) AS nb_reports, comment_id, author, comment, comment_date FROM reports INNER JOIN comments ON reports.comment_id = comments.id GROUP BY comment_id HAVING nb_reports >= 2 ORDER BY nb_reports DESC');
 
       return $reports;
     }
+
 }
 
