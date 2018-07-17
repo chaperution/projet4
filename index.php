@@ -101,6 +101,8 @@ try {
 		elseif ($_GET['action'] == 'submitPost') {
 			if (!empty($_POST['title']) && !empty($_POST['content'])) {
 				newPost($_POST['title'], $_POST['content']);
+			} else {
+				throw new Exception('Contenu vide !');
 			}
 		}
 		elseif ($_GET['action'] == 'deletePost') {

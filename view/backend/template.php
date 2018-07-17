@@ -8,8 +8,9 @@
 	    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Pacifico|Roboto|Slabo+27px" rel="stylesheet">
 	    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 	    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  		<script>tinymce.init({ selector:'textarea' });</script>
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script>tinymce.init({ selector:'textarea', content_css : '/public/css/style.css', 
+  			language_url: 'https://olli-suutari.github.io/tinyMCE-4-translations/fr_FR.js',
+			language: 'fr_FR' });</script>
 	    <!-- ajouter meta -->
 	</head>
 

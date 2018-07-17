@@ -7,6 +7,14 @@ $title = "Panneau d'administration"; ?>
 <section id="adminPanel">
 	<h1>Panneau d'administration</h1>
 	<div id="managerBlock">
+<?php
+/*if (isset($_GET['updatePost']) && $_GET['updatePost'] == 'success') {
+	echo '<p id="success">L\'article a bien été modifié !</p>';
+}*/
+
+?>
+
+
 		<p class="returnLink"><a href="index.php?action=admin">Retour au menu</a></p>
 		<div id="updateBlock">
 			<form action="index.php?action=submitUpdate&amp;id=<?= $post['id']; ?>" method="post">

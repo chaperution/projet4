@@ -11,12 +11,20 @@ $title = "Panneau d'administration"; ?>
 		<div id="postManage">
 			<h3 class="headPost">Gestion des Articles</h3>
 <?php
+	$countPost = 0;
 	while ($data = $posts->fetch()) {
 		if (!empty($data)) {
 ?>
 			<div class="listPanel">
 				<p><a class="linkAdmin" href="index.php?action=updatePost&amp;id=<?= $data['id']; ?>"><?= $data['title']; ?></a></p>
-				<a class="report" href="index.php?action=deletePost&amp;id=<?= $data['id']; ?>"><i class="fas fa-trash-alt"></i></a>
+				<button class="report removePost"><i class="fas fa-trash-alt"></i></button>
+					<div id="postModal<?= $countPost ?>" class="modal">
+						<div class="modalContent">
+							<p>Voulez-vous vraiment supprimer l'article <em><?= $data['title']; ?></em> ?</p>
+							<a class="confirmDelete" href="index.php?action=deletePost&amp;id=<?= $data['id']; ?>">Oui</a>
+							<span id="closePostModal<?= $countPost++ ?>" class="closeModal">Non</span>
+						</div>
+					</div>
 				<a class="report" href="index.php?action=updatePost&amp;id=<?= $data['id']; ?>"><i class="fas fa-edit"></i></a>
 				<p><em><?= $data['date_fr']; ?></em></p>	
 			</div>
@@ -31,12 +39,20 @@ $title = "Panneau d'administration"; ?>
 		<div id="commentManage">
 			<h3 class="headPost">Gestion des commentaires signalés</h3>
 <?php 
+	$countReport = 0;
 	while ($report = $reports->fetch()) {
 ?>
 			<div class="listPanel">
 				<p><a class="linkAdmin" href="#"><?= $report['author']; ?></a></p>
-				<p><em><?= $report['comment_date']; ?></em></p>
-				<a class="report" href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>"><i class="fas fa-trash-alt"></i></a>
+				<p><em><?= $report['date_c']; ?></em></p>
+				<button class="report removeComment"><i class="fas fa-trash-alt"></i></button>
+					<div id="reportModal<?= $countReport ?>" class="modal">
+						<div class="modalContent">
+							<p>Voulez-vous vraiment supprimer le commentaire de <em><?= $report['author']; ?></em> ?</p>
+							<a class="confirmDelete" href="index.php?action=deleteComment&amp;id=<?= $report['comment_id']; ?>">Oui</a>
+							<span id="closeCommentModal<?= $countReport++ ?>" class="closeModal">Non</span>
+						</div>
+					</div>
 				<p class="nbReports"><?= $report['nb_reports']; ?> signalements</p>
 				<p><?= $report['comment']; ?></p>	
 			</div>
@@ -57,16 +73,24 @@ $title = "Panneau d'administration"; ?>
 					<th>Supprimer</th>
 				</tr>
 <?php
+	$countMember = 0;
 	while ($member = $members->fetch()) {
 		if(!empty($member)) {
 ?>
-		
 				<tr>
 					<td><?= $member['id']; ?></td>
 					<td><?= $member['groups_id']; ?></td>
 					<td><?= $member['pseudo']; ?></td>
 					<td><em><?= $member['date_sub']; ?></em></td>
-					<td><a href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>"><i class="fas fa-user-times"></i></a></td>
+					<td><button class="removeMember"><i class="fas fa-user-times"></i></button>
+						<div id="memberModal<?= $countMember ?>" class="modal">
+							<div class="modalContent">
+								<p>Voulez-vous vraiment supprimer le membre <em><?= $member['pseudo']; ?></em> ?</p>
+								<a class="confirmDelete" href="index.php?action=deleteMember&amp;id=<?= $member['id']; ?>">Oui</a>
+								<span id="closeMemberModal<?= $countMember++ ?>" class="closeModal">Non</span>
+							</div>
+						</div>
+					</td>
 				</tr>
 <?php
 		} else {

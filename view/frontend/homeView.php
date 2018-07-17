@@ -29,16 +29,16 @@ while ($data = $posts->fetch()) {
 			</h3>
 		</div>
 		<div class="content">
-			<p class="chapters">
+			<div class="chapters">
 			<?php
 				$extract = substr($data['content'], 0, 1000);
-				echo nl2br(htmlspecialchars($extract)) . " ...";
+				echo $extract . " ...";
 			?>
 			<br />
 				<div class="readMore">
 					<a href="index.php?action=post&amp;id=<?= $data['id']; ?>">Lire la suite ...</a>
 				</div>
-			</p>
+			</div>
 		</div>
 	</div>
 

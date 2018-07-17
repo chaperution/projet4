@@ -8,7 +8,7 @@ function displayLoginAdmin() {
 }
 
 function loginAdmin() {
-	if (isset($_POST['pass']) AND $_POST['pass'] == "KFg54OpER1Gk7") {
+	if (isset($_POST['pass']) AND $_POST['pass'] == "TEST") {
 		header('Location: index.php?action=admin');
 	} else {
 		header('Location: index.php?action=admin-login-view');

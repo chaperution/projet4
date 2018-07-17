@@ -20,7 +20,8 @@ h1 {
 #formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
 .parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
 #adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
-#updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label  {
+#updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label,
+.modalContent p, .closeModal, .confirmDelete  {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -370,6 +371,7 @@ section .parAbout:last-child p {
 	background-color: #0a3d62;
 	color: white;
 	float: right;
+	cursor: pointer;
 }
 
 #updateBlock input[type="text"] {
@@ -405,8 +407,12 @@ section .parAbout:last-child p {
 	text-decoration: none;
 }
 
+.listPanel:hover {
+	background-color: #dfe6e9;
+}
+
 .fa-user-times, .fa-trash-alt, .fa-edit {
-	font-size: 1.2em;
+	font-size: 1.4em;
 	margin:0 5px;
 }
 
@@ -420,6 +426,63 @@ section .parAbout:last-child p {
 
 .fa-edit {
 	color: #2ecc71;
+}
+
+.removeComment, .removePost, .removeMember {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.modal {
+	display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalContent {
+	background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    text-align: center;
+}
+
+.modalContent p {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	margin: 40px;
+}
+
+.modalContent em {
+	color: #0a3d62;
+}
+
+.confirmDelete {
+	border: 1px solid red;
+	background-color: red;
+}
+
+.closeModal {
+	border: 1px solid grey;
+	background-color: grey;
+}
+
+.closeModal, .confirmDelete {
+	padding: 10px 25px;
+	border-radius: 15px;
+	color: white;
+	margin: 20px;
+	cursor: pointer;
 }
 
 .nbReports {
@@ -462,9 +525,9 @@ td, th {
 	padding: 12px;
 }
 
-tr:hover :not(th) {
+/*tr:hover :not(th) {
 	background-color: #dfe6e9;
-}
+}*/
 
 
 /* ________________ ERROR / SUCCESS / INFO __________________ */

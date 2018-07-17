@@ -61,13 +61,11 @@ function addMember($pseudo, $pass, $mail) {
 	$mailValidity = $memberManager->checkMail($mail);
 
 	if ($usernameValidity) {
-		//throw new Exception("Ce pseudo est déjà utilisé !");
 		header('Location: index.php?action=subscribe&error=invalidUsername');	
 	}
 
 	if ($mailValidity) {
 		header('Location: index.php?action=subscribe&error=invalidMail');
-		//throw new Exception("Cette adresse mail est déjà utilisée !");
 	}
 
 
@@ -98,7 +96,6 @@ function loginSubmit($pseudo, $pass) {
     }
     else {
     	if ($isPasswordCorrect) {
-    		//session_start();
     		$_SESSION['id'] = $member['id'];
     		$_SESSION['pseudo'] = $pseudo;
     		$_SESSION['groups_id'] = $member['groups_id'];
