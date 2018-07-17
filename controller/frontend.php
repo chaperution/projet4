@@ -122,5 +122,8 @@ function displayAbout() {
 	require('view/frontend/aboutView.php');
 }
 
+function displayPrivacy() {
+	require('view/frontend/privacyView.php');
+}
 
 

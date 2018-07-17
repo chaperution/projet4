@@ -48,8 +48,10 @@
 			<?= $content ?>
 
 			<footer>
-				<p>Mentions Légales</p>
-				<p>Images libres de droit</p>
+				<ul>
+					<li><a href="index.php?action=privacy"> Mentions Légales</a></li>
+					<li>Images libres de droit</li>
+				</ul>
 			</footer>
 		</main>
 

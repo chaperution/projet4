@@ -114,6 +114,9 @@ try {
 		elseif ($_GET['action'] == 'deleteMember') {
 			removeMember($_GET['id']);
 		}
+		elseif ($_GET['action'] == 'privacy') {
+			displayPrivacy();
+		}
 	}
 	else {
 	    listPosts();

@@ -21,7 +21,8 @@ h1 {
 .parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
 #adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
 #updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label,
-.modalContent p, .closeModal, .confirmDelete  {
+.modalContent p, .closeModal, .confirmDelete, #privacyFrame h2, #privacyFrame h3, #privacyFrame p,
+footer li, footer a {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -578,9 +579,42 @@ footer {
 	right: 0;
 	top: 0;
 	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 }
 
-footer p {
+footer li, footer a {
 	color: white;
+	font-size: 1.1em;
 }
 
+footer li {
+	margin: 10px 10px;
+}
+
+footer a {
+	text-decoration: none;
+	cursor:pointer;
+}
+
+#privacyFrame {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#privacyFrame p {
+	text-align: justify;
+	font-size: 1.1em;
+	width: 1200px;
+}
+
+#privacyFrame h2,  #privacyFrame h3 {
+	color: #0a3d62;
+	font-weight: bold;
+}
+
+#privacyFrame h2 {
+	font-size: 1.6em;
+}

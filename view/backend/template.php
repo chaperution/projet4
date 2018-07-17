@@ -42,8 +42,6 @@
 			<?= $content ?>
 
 			<footer>
-				<p>Mentions Légales</p>
-				<p>Images libres de droit</p>
 			</footer>
 		</main>
 
