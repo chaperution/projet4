@@ -42,18 +42,28 @@ while ($data = $posts->fetch()) {
 		</div>
 	</div>
 
-	
 <?php
+
 	} else {
 		echo "Ce billet n'existe pas.";
 	}
 }
-
 	$posts->closeCursor();
 
+	if ($nbPage >= 2) {
 ?>
-
-
+	<div id="pageFrame">
+<?php
+		for ($i = 1; $i <= $nbPage; $i++) {
+			if ($i == $_GET['page']) {
+				echo "<span class='cPageFrame'>$i</span>";
+			} else {
+				echo "<a class='pageBlock' href=\"index.php?page=$i\">$i</a>";
+			}
+		}
+	}
+?>
+	</div>
 
 </section>
 

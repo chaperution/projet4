@@ -22,7 +22,7 @@ h1 {
 #adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
 #updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label,
 .modalContent p, .closeModal, .confirmDelete, #privacyFrame h2, #privacyFrame h3, #privacyFrame p,
-footer li, footer a {
+footer li, footer a, .cPageFrame, .pageBlock {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -64,13 +64,13 @@ footer li, footer a {
 	position: relative;
 	margin: 20px auto;
 	max-width: 1200px;
-}
-
-#headerImg {
-	width: 1200px;
 	height: 450px;
 }
 
+#headerImg img {
+	width: 1200px;
+	height: 450px;
+}
 
 #headerImg a {
 	cursor: pointer;
@@ -84,9 +84,6 @@ footer li, footer a {
 	margin: 0;
 }
 
-.headPost {
-	padding: 9px;
-}
 
 #authorName {
 	font-weight: bold;
@@ -112,6 +109,7 @@ footer li, footer a {
 	border: 2px solid #3c6382;
 	background-color: #3c6382;
 	color: white;
+	padding: 9px;
 }
 
 .chapters {
@@ -192,6 +190,13 @@ footer li, footer a {
 
 #commentForm {
 	margin: 30px;
+	width: 1000px;
+}
+
+#commentForm textarea {
+	width: 100%;
+	min-height: 200px;
+	resize: vertical;
 }
 
 #commentForm p {
@@ -230,6 +235,28 @@ footer li, footer a {
 	float: right;
 }
 
+.cPageFrame {
+	background-color: transparent;
+	color: black;
+	border: 1px solid #0a3d62;
+}
+
+.cPageFrame, .pageBlock {
+	padding: 7px;
+	margin: 5px;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.pageBlock {
+	background-color: #0a3d62;
+	color: white;
+}
+
+#pageFrame {
+	padding: 20px;
+}
 
 /* _________________ LOGIN ________________ */
 

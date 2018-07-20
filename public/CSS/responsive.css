@@ -1,0 +1,153 @@
+/* __________________________ RESPONSIVE _________________________ */
+
+
+/* ___________________MOBILE___________________ */
+
+@media all and (max-width: 768px) {
+	/* ____________ NAV ____________ */
+
+	#menu {
+		margin: 0;
+		border: 2px solid #3c6382;
+		height: 65px;
+		background-color: #3c6382;
+	}
+
+	#menu ul {
+		display: flex;
+		list-style-type: none;
+		float: right;
+	}
+
+	#menu li {
+		margin-right: 30px;
+	}
+
+	#menu a {
+		font-weight: bold;
+		font-size: 1.4em;
+		color: white;
+		text-decoration: none;
+	}
+
+	#menu a:hover {
+		border-bottom: 3px solid white;
+		cursor: pointer;
+		padding-bottom: 5px;
+	}
+
+	/* _____________ HEAD _______________ */
+
+	#headerFrame {
+		position: relative;
+		margin: 20px auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg  {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#header_content {
+		position: absolute;
+		top: 50%;
+		left: 30%;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	#header_content h1 {
+		font-size: 4vw;
+	}
+
+	.headPost {
+		padding: 9px;
+	}
+
+	#authorName {
+		font-size: 2vw;
+		line-height: 0;
+	}
+
+	/* ______________ POSTS ______________ */
+
+	.post {
+		max-width: 100%;
+	}
+
+	.headPost {
+		padding: 0;
+	}
+
+	.chapters {
+		padding: 10px;
+		font-size: 1em;
+	}
+
+	.post a, .returnLink a {
+		padding: 10px;
+	}
+
+	.readMore {
+		margin: 10px;
+	}
+
+	.content {
+		padding: 8px;
+	}
+
+	.fullPost {
+		max-width: 100%;
+	}
+
+	#commentsFrame {
+		max-width: 100%;
+		margin: 15px;
+	}
+
+	#commentsFrame h3 {
+		font-size: 1.2em;
+	}
+
+	.returnLink {
+		margin: 20px;
+	}
+
+	.head-full-post {
+		font-size: 1.5em;
+	}
+
+	.commentBlock p {
+		font-size: 1em;
+	}
+
+	#commentForm p, #commentForm label, input[type="submit"] {
+		font-size: 1.1em;
+	}
+	
+	#commentForm {
+		max-width: 100%;
+	}
+
+
+
+}
+
+/* _________________TABLETTE_________________ */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+}
+
+
+/* _______________ ECRAN PC PLUS PETIT________________ */
+
+@media all and (min-width: 1024px) and (max-width: 1250px){
+
+}

@@ -15,9 +15,40 @@ if (flashMessageError !== null) {
 }
 
 
+function Modal(buttonRemove, modals, closes) {
+	this.buttonRemove = buttonRemove;
+	this.modals = modals;
+	this.closes = closes;
+
+	for (let i = 0; i < this.buttonRemove.length; i++) {
+		let modal = document.getElementById(this.modals + i.toString());
+		let close = document.getElementById(this.closes + i.toString());
+		
+		this.buttonRemove[i].addEventListener('click', function() {
+			modal.style.display = "block";
+		});
+
+		close.addEventListener('click', function() {
+			modal.style.display = "none";
+		});
+
+		window.addEventListener('click', function(e) {
+			if (e.target == modal) {
+				modal.style.display = "none";
+			}
+		});
+	};
+}
+
+var modalPosts = new Modal(document.getElementsByClassName('removePost'), 'postModal', 'closePostModal');
+var modalComments = new Modal(document.getElementsByClassName('removeComment'), 'reportModal', 
+	'closeCommentModal');
+var modalMembers = new Modal(document.getElementsByClassName('removeMember'), 'memberModal', 
+	'closeMemberModal');
+
 // Gestion des modals pour la suppression des posts
 
-var buttonPosts = document.getElementsByClassName('removePost');
+/*var buttonPosts = document.getElementsByClassName('removePost');
 
 for (let i = 0; i < buttonPosts.length; i++) {
 	let buttonPost = buttonPosts[i];
@@ -87,7 +118,7 @@ for (let i = 0; i < buttonMembers.length; i++) {
 			modal.style.display = "none";
 		}
 	});
-};
+};*/
 
 
 

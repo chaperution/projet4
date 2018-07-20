@@ -2,6 +2,7 @@
 
 //require_once();
 require_once('model/PostManager.php');
+require_once('model/Pagination.php');
 
 function displayLoginAdmin() {
 	require('view/frontend/adminLoginView.php');
@@ -19,8 +20,23 @@ function displayAdmin() {
 	$postManager = new \projet4\Blog\Model\PostManager(); 
 	$reportManager = new \projet4\Blog\Model\ReportManager();
 	$memberManager = new \projet4\Blog\Model\MemberManager();
+	$pagination = new \projet4\Blog\Model\Pagination();
 
-    $posts = $postManager->getPosts(); 
+	$postsPerPage = 6;
+
+	$nbPosts = $pagination->getPostsPagination();
+	$nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
+
+	if (!isset($_GET['page'])) {
+		$cPage = 0;
+	} else {
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+			$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
+		}
+	}
+	
+    $posts = $postManager->getPosts($cPage, $postsPerPage);
+ 
     $reports = $reportManager->getReports();
     $members = $memberManager->getMembers();
 

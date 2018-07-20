@@ -50,7 +50,7 @@ while ($comment = $comments->fetch()) {
 			<p>N'hésitez pas à me laisser un commentaire ! ;)</p>
 			<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
 				<label for="comment">Commentaire :</label></br>
-				<textarea id="comment" name="comment" cols="85" rows="10"></textarea> 
+				<textarea id="comment" name="comment"></textarea> 
 				</br>
 				<input type="submit" value="Envoyer"/>
 			</form>

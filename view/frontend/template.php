@@ -5,6 +5,7 @@
 		<title><?= $title ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link href="public/css/style.css" rel="stylesheet" /> 
+	    <link href="public/css/responsive.css" rel="stylesheet" /> 
 	    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Pacifico|Roboto|Slabo+27px" rel="stylesheet">
 	    <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 	    <!-- ajouter meta -->

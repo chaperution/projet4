@@ -34,6 +34,23 @@ $title = "Panneau d'administration"; ?>
 		}
 	}
 	$posts->closeCursor();
+
+	if ($nbPage >= 2) {
+?>
+		<div id="pageFrame">
+<?php
+		for ($i = 1; $i <= $nbPage; $i++) {
+			if ($i == $_GET['page']) {
+				echo "<span class='cPageFrame'>$i</span>";
+			} else {
+				echo "<a class='pageBlock' href=\"index.php?action=admin&amp;page=$i\">$i</a>";
+			}
+		}
+?>
+		</div>
+<?php
+	}
+
 ?>
 		</div>
 		<div id="commentManage">

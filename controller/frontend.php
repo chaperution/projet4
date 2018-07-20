@@ -4,12 +4,28 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/MemberManager.php');
 require_once('model/ReportManager.php');
+require_once('model/Pagination.php');
 
 
 function listPosts() {
     $postManager = new \projet4\Blog\Model\PostManager();
-    
-    $posts = $postManager->getPosts(); 
+    $pagination = new \projet4\Blog\Model\Pagination();
+	$postManager = new \projet4\Blog\Model\PostManager();
+
+	$postsPerPage = 4;
+
+	$nbPosts = $pagination->getPostsPagination();
+	$nbPage = $pagination->getPostsPages($nbPosts, $postsPerPage);
+
+	if (!isset($_GET['page'])) {
+		$cPage = 0;
+	} else {
+		if (isset($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $nbPage) {
+			$cPage = (intval($_GET['page']) - 1) * $postsPerPage;
+		}
+	}
+	
+    $posts = $postManager->getPosts($cPage, $postsPerPage);
 
     require('view/frontend/homeView.php');
 }
@@ -20,11 +36,17 @@ function post() {
     $reportManager = new \projet4\Blog\Model\ReportManager();
 
     $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
 
-    if (!empty($_SESSION)) {
-    	$idComment = $reportManager->getIdReports($_SESSION['id']);
+    if ($post) {
+    	$comments = $commentManager->getComments($_GET['id']);
+
+	    if (!empty($_SESSION)) {
+	    	$idComment = $reportManager->getIdReports($_SESSION['id']);
+	    }
+    } else {
+    	header('Location: index.php');
     }
+    
 
     require('view/frontend/postView.php');
 }
@@ -97,7 +119,7 @@ function loginSubmit($pseudo, $pass) {
     else {
     	if ($isPasswordCorrect) {
     		$_SESSION['id'] = $member['id'];
-    		$_SESSION['pseudo'] = $pseudo;
+    		$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
     		$_SESSION['groups_id'] = $member['groups_id'];
     		echo 'Vous êtes connecté !';
     		header('Location: index.php');
@@ -125,5 +147,4 @@ function displayAbout() {
 function displayPrivacy() {
 	require('view/frontend/privacyView.php');
 }
-
 

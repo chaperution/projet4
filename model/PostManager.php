@@ -6,12 +6,13 @@ require_once("model/Manager.php");
 
 class PostManager extends Manager
 {      
-    public function getPosts()
+    public function getPosts($cPage, $postsPerPage)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query('SELECT id, title, content, DATE_FORMAT(creation_date, "%d/%m/%Y %H:%i:%s") AS date_fr FROM posts  ORDER BY creation_date DESC LIMIT 0,7');
+        $req = $bdd->query("SELECT id, title, content, DATE_FORMAT(creation_date, '%d/%m/%Y %H:%i:%s') AS date_fr FROM posts  ORDER BY creation_date DESC LIMIT $cPage, $postsPerPage");
         return $req;
     }
+
     public function getPost($postId)
     {
         $bdd = $this->dbConnect();

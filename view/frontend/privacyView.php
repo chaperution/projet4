@@ -22,7 +22,7 @@ $title = "Mentions Légales"; ?>
 	Le responsable de la publication est une<strong> personne physique</strong><br />
 	<br />
 	Le Webmaster est  : <strong>Charlotte</strong><br />
-	Contacter le Webmaster :  <strong><a href="mailto:cha.perution@gmail.com?subject=Contact a partir des mentions lÃ©gales via le site www.jean-forteroche.charlotteperution.fr">cha.perution@gmail.com</a></strong><br />
+	Contacter le Webmaster :  <strong><a href="mailto:cha.perution@gmail.com?subject=Contact a partir des mentions lÃ©gales via le site www.jean-forteroche.charlotteperution.fr">chacha@gmail.com</a></strong><br />
 	L’hebergeur du site est : <strong>1&1 1&1 Internet SARL 7, place de la Gare BP 70109  57201   Sarreguemines Cedex</strong><br />
 	<strong><u>CREDIT :</u> </strong> Les mentions légales ont étés générées par<strong> <a href="https://www.generer-mentions-legales.com/generateur-mentions-legales.html" target="_blank">générateur de mentions legales</a></strong></p>
 
