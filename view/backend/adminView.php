@@ -11,6 +11,16 @@ $title = "Panneau d'administration"; ?>
 		<div id="postManage">
 			<h3 class="headPost">Gestion des Articles</h3>
 <?php
+	if (isset($_GET['update-status']) &&  $_GET['update-status'] == 'success') {
+		echo '<p id="success">L\'article a bient été modifié !<p>';
+	}
+	elseif (isset($_GET['new-post']) &&  $_GET['new-post'] == 'success') {
+		echo '<p id="success">L\'article a bient été posté !<p>';
+	}
+	elseif (isset($_GET['remove-post']) &&  $_GET['remove-post'] == 'success') {
+		echo '<p id="success">L\'article a bien été supprimé !</p>';
+	}
+
 	$countPost = 0;
 	while ($data = $posts->fetch()) {
 		if (!empty($data)) {
@@ -56,6 +66,10 @@ $title = "Panneau d'administration"; ?>
 		<div id="commentManage">
 			<h3 class="headPost">Gestion des commentaires signalés</h3>
 <?php 
+	if (isset($_GET['remove-comment']) &&  $_GET['remove-comment'] == 'success') {
+		echo '<p id="success">Le commentaire a bien été supprimé !</p>';
+	}
+
 	$countReport = 0;
 	while ($report = $reports->fetch()) {
 ?>
@@ -81,6 +95,11 @@ $title = "Panneau d'administration"; ?>
 		</div>
 		<div id="memberManage">
 			<h3 class="headPost">Gestion des membres</h3>
+<?php 
+	if (isset($_GET['remove-member']) &&  $_GET['remove-member'] == 'success') {
+		echo '<p id="success">Le membre a bien été supprimé !</p>';
+	}
+?>
 			<table>
 				<tr>
 					<th>Identifiant</th>

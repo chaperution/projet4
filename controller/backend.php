@@ -12,7 +12,7 @@ function loginAdmin() {
 	if (isset($_POST['pass']) AND $_POST['pass'] == "TEST") {
 		header('Location: index.php?action=admin');
 	} else {
-		header('Location: index.php?action=admin-login-view');
+		header('Location: index.php?action=admin-login-view&account-status=unsuccess-login');
 	}
 }
 
@@ -55,7 +55,7 @@ function submitUpdate($title, $content, $postId) {
 	
 	$updated = $postManager->updatePost($title, $content, $postId);
 
-	Header('Location: index.php?action=admin');
+	Header('Location: index.php?action=admin&update-status=success');
 }
 
 function displayCreatePost() {
@@ -67,7 +67,7 @@ function newPost($title, $content) {
 
 	$newPost = $postManager->createPost($title, $content);
 
-	Header('Location: index.php?action=admin');
+	Header('Location: index.php?action=admin&new-post=success');
 }
 
 function removePost($postId) {
@@ -75,7 +75,7 @@ function removePost($postId) {
 
 	$deletedPost = $postManager->deletePost($postId);
 
-	Header('Location: index.php?action=admin');
+	Header('Location: index.php?action=admin&remove-post=success');
 }
 
 function removeComment($commentId) {
@@ -83,7 +83,7 @@ function removeComment($commentId) {
 
 	$deletedComment = $commentManager->deleteComment($commentId);
 
-	Header('Location: index.php?action=admin');
+	Header('Location: index.php?action=admin&remove-comment=success');
 }
 
 function removeMember($memberId) {
@@ -91,5 +91,5 @@ function removeMember($memberId) {
 
 	$deletedMember = $memberManager->deleteMember($memberId);
 
-	Header('Location: index.php?action=admin');	
+	Header('Location: index.php?action=admin&remove-member=success');	
 }

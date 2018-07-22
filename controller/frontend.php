@@ -114,7 +114,7 @@ function loginSubmit($pseudo, $pass) {
 	$isPasswordCorrect = password_verify($_POST['pass'], $member['pass']);
 
 	if (!$member) {
-        echo '<p>Mauvais identifiant ou mot de passe !</p>';
+        header('Location: index.php?action=login&account-status=unsuccess-login');
     }
     else {
     	if ($isPasswordCorrect) {
@@ -123,11 +123,9 @@ function loginSubmit($pseudo, $pass) {
     		$_SESSION['groups_id'] = $member['groups_id'];
     		echo 'Vous êtes connecté !';
     		header('Location: index.php');
-    		// faire lien vers page profil
-    		// header('Location: profil.php?id= . $_SESSION['id']');
     	}
         else {
-        	echo '<p>Mauvais identifiant ou mot de passe !</p>';
+        	header('Location: index.php?action=login&account-status=unsuccess-login');
         }
     }
 }

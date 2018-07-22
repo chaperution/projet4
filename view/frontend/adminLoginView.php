@@ -4,6 +4,11 @@
 
 <section id="adminLoginFrame">
 	<h3>Se connecter au panneau d'administration</h3>
+<?php
+if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {
+	echo '<p id="error">Mauvais mot de passe !<p>';
+}
+?>
 	<div class="formBlock">
 		<form action="index.php?action=adminLogin" method="post">
 			<label for="pass">Entrez le mot de passe :</label>

@@ -4,6 +4,12 @@
 
 
 <section id="loginFrame">
+<?php
+if (isset($_GET['account-status']) &&  $_GET['account-status'] == 'unsuccess-login') {
+	echo '<p id="error">Mauvais identifiant ou mot de passe !<p>';
+}
+
+?>
 	<div class="formBlock">
 		<form action="index.php?action=loginSubmit" method="post">
 			<label for="pseudo">Pseudo</label><br/>
