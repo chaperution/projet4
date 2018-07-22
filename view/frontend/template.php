@@ -14,26 +14,29 @@
 	<body>
 		<main>
 			<header>
-				<nav id="menu">
-					<ul>
-						<li><a href="index.php">Accueil</a></li>
-						<li><a href="index.php?action=about">À propos</a></li>
-						<?php
-						if (!empty($_SESSION)) {
-                            echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
-                        }
-                      	if(!empty($_SESSION) && $_SESSION['groups_id'] == '1') {
-                            echo '<li><a href="index.php?action=admin-login-view"><i class="fas fa-key"></i> Administration</a></li>';
-                        }
-                        if (!empty($_SESSION))  {
-                            echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';
-                        } else {
-                            echo '<li><a href="index.php?action=login">Connexion / Inscription</a></li>';
-                        }
-						?>
-						
-					</ul>
-				</nav>
+				<div id="barre-menu">
+					<a href="#" class="header-icon" id="header-icon"></a>
+					<nav id="menu">
+						<ul>
+							<li><a href="index.php">Accueil</a></li>
+							<li><a href="index.php?action=about">À propos</a></li>
+							<?php
+							if (!empty($_SESSION)) {
+	                            echo '<li><a href="#"><i class="fas fa-user"></i> ' . htmlspecialchars($_SESSION['pseudo']) . '</a></li>';
+	                        }
+	                      	if(!empty($_SESSION) && $_SESSION['groups_id'] == '1') {
+	                            echo '<li><a href="index.php?action=admin-login-view"><i class="fas fa-key"></i> Administration</a></li>';
+	                        }
+	                        if (!empty($_SESSION))  {
+	                            echo '<li><a href="index.php?action=logout">Déconnexion</a></li>';
+	                        } else {
+	                            echo '<li><a href="index.php?action=login">Connexion / Inscription</a></li>';
+	                        }
+							?>
+							
+						</ul>
+					</nav>
+				</div>
 
 				<div id="headerFrame">
 					<div id="headerImg">
@@ -48,13 +51,14 @@
 
 			<?= $content ?>
 
-			<footer>
+			
+		</main>
+		<footer>
 				<ul>
 					<li><a href="index.php?action=privacy"> Mentions Légales</a></li>
 					<li>Images libres de droit</li>
 				</ul>
 			</footer>
-		</main>
 
 		<script src="public/js/app.js"></script>
 	</body>

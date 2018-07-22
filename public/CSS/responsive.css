@@ -6,34 +6,67 @@
 @media all and (max-width: 768px) {
 	/* ____________ NAV ____________ */
 
-	#menu {
+	.header-icon {
+    	position: relative;
+    	display: block;
+    	float: left;
+    	width: 50px;
+    	height: 60px;
+    	cursor: pointer;
+    }
+
+    .header-icon:after {
+    	content:"";
+    	position: absolute;
+		display: block;
+		width: 20px;
+		height: 0;
+		top: 15px;
+		left: 15px;
+		box-shadow: 0 10px 0 1px rgb(255, 255, 255), 0 16px 0 1px rgb(255, 255, 255),
+		 0 22px 0 1px rgb(255, 255, 255);
+    }
+
+    .menu-activated {
+    	transform: translateX(0);
+    }
+
+    #barre-menu {
+    	height: 70px;
+    	background-color: #3c6382;
+    }
+
+    #menu {
+    	height: auto;
+    }
+
+	nav {
 		margin: 0;
 		border: 2px solid #3c6382;
-		height: 65px;
 		background-color: #3c6382;
+		position: absolute;
+    	left: 0;
+    	top: 50px;
+    	bottom: 0;
+    	width: 255px;
+    	z-index: 40;
+    	transform: translateX(-260px);
+    	transition: transform 0.3s ease-out;
 	}
 
-	#menu ul {
+	nav ul {
 		display: flex;
+		flex-direction: column;
 		list-style-type: none;
-		float: right;
+    	line-height: 50px;
+    	text-align: center;
 	}
 
-	#menu li {
-		margin-right: 30px;
-	}
-
-	#menu a {
+	nav a {
 		font-weight: bold;
-		font-size: 1.4em;
+		font-size: 1vw;
 		color: white;
 		text-decoration: none;
-	}
-
-	#menu a:hover {
-		border-bottom: 3px solid white;
-		cursor: pointer;
-		padding-bottom: 5px;
 	}
 
 	/* _____________ HEAD _______________ */
@@ -136,18 +169,468 @@
 		max-width: 100%;
 	}
 
+	/* ___________________ ABOUT ____________________ */
 
+	.parAbout {
+		text-align: center;
+	}
+
+	.parAbout h3 {
+		font-size: 2em;
+		padding: 10px;
+	}
+
+	.parAbout img {
+	
+		margin: 15px;
+	}
+
+	/* __________________ ADMIN PANEL _______________ */
+
+
+	#adminLoginFrame h3 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	#adminPanel {
+		width: 100%;
+	}
+
+	#adminPanel h1, #createPost h1 {
+		font-size: 2em;
+	}
+
+	#writePost a {
+		font-size: 1em;
+	}
+
+	#updateBlock {
+		max-width: 100%;
+	}
+
+	#updateBlock input[type="text"] {
+		font-size: 1.5em;
+		width: 70%;
+	}
+
+	.listPanel {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	#postManage, #commentManage, #memberManage {
+		width: 100%;
+		padding: 0;
+	}
+
+	#postManage h3, #commentManage h3, #memberManage h3 {
+		font-size: 1.2em;
+	}
+
+	.fa-user-times, .fa-trash-alt, .fa-edit {
+		font-size: 1.3em;
+	}
+
+	.modal {
+	    width: 100%; 
+	    height: 100%;
+	}
+
+	.modalContent {
+	    margin: 5% auto; 
+	    width: 40%;
+	    display: flex;
+	    flex-direction: column;
+	}
+
+	.modalContent p {
+		font-size: 1em;
+		margin: 10px;
+	}
+
+	.closeModal, .confirmDelete {
+		margin: 10px;
+	}
+
+	table {
+		width: 100%;
+		box-shadow: none;
+	}
+	
+	tr {
+		font-size: 2.5vw;
+		width: 100%;
+	}
+
+	td {
+		text-align: left;
+		padding: 5px;
+		border-right:0;
+	}
+
+	/* _________________ FOOTER ________________ */
+
+	#privacyFrame {
+		padding: 5px;
+	}	
+
+	#privacyFrame p {
+		text-align: center;
+		width: 100%;
+	}
 
 }
 
 /* _________________TABLETTE_________________ */
 
 @media all and (min-width: 768px) and (max-width: 1024px) {
+	/* ____________ NAV ____________ */
+
+	.header-icon {
+    	position: relative;
+    	display: block;
+    	float: left;
+    	width: 50px;
+    	height: 60px;
+    	cursor: pointer;
+    }
+
+    .header-icon:after {
+    	content:"";
+    	position: absolute;
+		display: block;
+		width: 20px;
+		height: 0;
+		top: 15px;
+		left: 15px;
+		box-shadow: 0 10px 0 1px rgb(255, 255, 255), 0 16px 0 1px rgb(255, 255, 255),
+		 0 22px 0 1px rgb(255, 255, 255);
+    }
+
+    .menu-activated {
+    	transform: translateX(0);
+    }
+
+    #barre-menu {
+    	height: 70px;
+    	background-color: #3c6382;
+    }
+
+    #menu {
+    	height: auto;
+    }
+
+	nav {
+		margin: 0;
+		border: 2px solid #3c6382;
+		background-color: #3c6382;
+		position: absolute;
+    	left: 0;
+    	top: 50px;
+    	bottom: 0;
+    	width: 255px;
+    	z-index: 40;
+    	transform: translateX(-260px);
+    	transition: transform 0.3s ease-out;
+	}
+
+	nav ul {
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+    	line-height: 50px;
+    	text-align: center;
+	}
+
+	nav a {
+		font-weight: bold;
+		font-size: 1vw;
+		color: white;
+		text-decoration: none;
+	}
+
+	/* _____________ HEAD _______________ */
+
+	#headerFrame {
+		position: relative;
+		margin: 20px auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg  {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#header_content {
+		position: absolute;
+		top: 50%;
+		left: 30%;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	#header_content h1 {
+		font-size: 4vw;
+	}
+
+	.headPost {
+		padding: 9px;
+	}
+
+	#authorName {
+		font-size: 2vw;
+		line-height: 0;
+	}
+
+	/* ______________ POSTS ______________ */
+
+	.post {
+		max-width: 100%;
+	}
+
+	.chapters {
+		padding: 10px;
+		font-size: 1em;
+	}
+
+	.post a, .returnLink a {
+		padding: 10px;
+	}
+
+	.readMore {
+		margin: 10px;
+	}
+
+	.content {
+		padding: 8px;
+	}
+
+	.fullPost {
+		max-width: 100%;
+	}
+
+	#commentsFrame {
+		max-width: 100%;
+		margin: 15px;
+	}
+
+	#commentsFrame h3 {
+		font-size: 1.2em;
+	}
+
+	.returnLink {
+		margin: 20px;
+	}
+
+	.head-full-post {
+		font-size: 1.5em;
+	}
+
+	.commentBlock p {
+		font-size: 1em;
+	}
+
+	#commentForm p, #commentForm label, input[type="submit"] {
+		font-size: 1.1em;
+	}
+	
+	#commentForm {
+		max-width: 100%;
+	}
+
+	/* __________________ ADMIN PANEL _______________ */
+
+
+	#adminLoginFrame h3 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	#adminPanel {
+		width: 100%;
+	}
+
+	#adminPanel h1, #createPost h1 {
+		font-size: 2.3em;
+	}
+
+	#writePost a {
+		font-size: 1.2em;
+	}
+
+	#updateBlock {
+		max-width: 100%;
+	}
+
+	#updateBlock input[type="text"] {
+		font-size: 1.5em;
+		width: 80%;
+	}
+
+	.listPanel {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	#postManage, #commentManage, #memberManage {
+		width: 100%;
+		padding: 20px;
+	}
+
+	#postManage h3, #commentManage h3, #memberManage h3 {
+		font-size: 1.5em;
+	}
+
+	.fa-user-times, .fa-trash-alt, .fa-edit {
+		font-size: 1.5em;
+	}
+
+	table {
+		width: 100%;
+		box-shadow: none;
+	}
+	
+	tr {
+		font-size: 2.5vw;
+		width: 100%;
+	}
+
+	td {
+		text-align: left;
+		padding: 5px;
+		border-right:0;
+	}
+
+	/* _________________ FOOTER ________________ */
+
+	#privacyFrame {
+		padding: 5px;
+	}	
+
+	#privacyFrame p {
+		text-align: center;
+		width: 100%;
+	}
+
 }
 
 
 /* _______________ ECRAN PC PLUS PETIT________________ */
 
 @media all and (min-width: 1024px) and (max-width: 1250px){
+	/* _____________ HEAD _______________ */
+
+	#headerFrame {
+		position: relative;
+		margin: 20px auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg  {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#headerImg img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	#header_content {
+		position: absolute;
+		top: 50%;
+		left: 30%;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	#header_content h1 {
+		font-size: 4vw;
+	}
+
+	.headPost {
+		padding: 9px;
+	}
+
+	#authorName {
+		font-size: 2vw;
+		line-height: 0;
+	}
+
+	/* ______________ POSTS ______________ */
+
+	.post {
+		max-width: 100%;
+	}
+
+	.fullPost {
+		max-width: 100%;
+	}
+
+	#commentsFrame {
+		max-width: 100%;
+	}
+	
+	#commentForm {
+		max-width: 100%;
+	}
+
+	/* __________________ ADMIN PANEL _______________ */
+
+
+	#adminLoginFrame h3 {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	#adminPanel {
+		width: 100%;
+	}
+
+	#updateBlock {
+		max-width: 100%;
+	}
+
+	#updateBlock input[type="text"] {
+		width: 80%;
+	}
+
+	.listPanel {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	#postManage, #commentManage, #memberManage {
+		width: 100%;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	/* _________________ FOOTER ________________ */
+
+	#privacyFrame {
+		padding: 5px;
+	}	
+
+	#privacyFrame p {
+		text-align: center;
+		width: 100%;
+	}
+
+
 
 }

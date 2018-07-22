@@ -5,13 +5,13 @@
 <section id="subscribeFrame">
 	<div class="formBlock">
 		<form action="index.php?action=addMember" method="post">
-			<label for="pseudo">Pseudo</label>
+			<label for="pseudo">Pseudo</label><br />
 			<input type="text" name="pseudo" id="pseudo" required /><br />
-			<label for="pass">Mot de passe</label>
+			<label for="pass">Mot de passe</label><br />
 			<input type="password" name="pass" id="pass" required /><br />
-			<label for="pass_confirm">Retapez votre mot de passe</label>
+			<label for="pass_confirm">Retapez votre mot de passe</label><br />
 			<input type="password" name="pass_confirm" id="pass_confirm" required /><br />
-			<label for="mail">Adresse email</label>
+			<label for="mail">Adresse email</label><br />
 			<input type="email" name="mail" id="mail" required /><br />
 			<input type="submit" value="S'inscrire" />
 		</form>

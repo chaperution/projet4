@@ -1,6 +1,12 @@
+html {
+	height: 100%;
+}
+
 body {
 	width: 100%;
 	margin: 0 auto;
+	/*min-height: 100%;*/
+	position: relative;
 }
 
 .chapters, .head-full-post {
@@ -17,7 +23,7 @@ h1 {
 }
 
 #menu a, .returnLink, .headPost, #commentsFrame h3, #commentForm, .commentBlock p, 
-#formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"], 
+#formBlock input[type="text"], #loginFrame input[type="password"], .formBlock label, #loginFrame input[type="submit"], 
 .parAbout h3, .parAbout p, .parAbout li, #adminLoginFrame h3, #adminLoginFrame label,
 #adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
 #updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label,
@@ -208,7 +214,8 @@ footer li, footer a, .cPageFrame, .pageBlock {
 	font-size: 1.2em;
 }
 
-#commentForm input[type="submit"] {
+#commentForm input[type="submit"], #loginFrame input[type="submit"], #subscribeFrame input[type="submit"], 
+#adminLoginFrame input[type="submit"] {
 	margin: 15px;
 	padding: 10px;
 	outline: none;
@@ -216,6 +223,7 @@ footer li, footer a, .cPageFrame, .pageBlock {
 	border: 1px solid #0a3d62;
 	background-color: #0a3d62;
 	color: white;
+	cursor: pointer;
 }
 
 #commentForm input[type="text"], #commentForm textarea  {
@@ -258,37 +266,38 @@ footer li, footer a, .cPageFrame, .pageBlock {
 	padding: 20px;
 }
 
-/* _________________ LOGIN ________________ */
+/* _________________ LOGIN / SUBSCRIBE ________________ */
 
-#loginFrame {
+#loginFrame, #subscribeFrame {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	margin: 30px;
+	margin: 55px;
 }
 
 .formBlock {
 	border: 1px solid grey;
 	padding: 75px;
 	box-shadow: 5px 5px 5px grey;
+	text-align: center;
 }
 
 .formBlock a {
 	text-decoration: none;
-	font-size: 1.1em;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #0a3d62;
 }
 
-.formBlock input[type="text"], #loginFrame input[type="password"], #loginFrame input[type="submit"] {
-
+.formBlock input[type="text"], .formBlock input[type="password"], .formBlock input[type="submit"], 
+.formBlock input[type="email"] {
+	margin: 10px;
+	line-height: 20px;
 }
 
-/* __________________ SUBSCRIBE ___________________ */
-
-#subscribeFrame {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	margin: 30px;
+.formBlock label {
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 /* ___________________ ABOUT ____________________ */
@@ -407,6 +416,7 @@ section .parAbout:last-child p {
 	margin: 20px;
 	padding: 5px;
 	font-weight: bold;
+	width: 1050px;
 }
 
 #updateBlock label {
@@ -422,12 +432,10 @@ section .parAbout:last-child p {
 }
 
 .listPanel {
-	border: 1px solid black;
 	width: 1200px;
 	margin: 10px;
 	border: 1px solid grey;
 	padding: 10px;
-	margin: 10px;
 	box-shadow: 5px 5px 5px grey;
 }
 
@@ -602,13 +610,13 @@ footer {
 	background-color: #3c6382;
 	margin-top: 20px;
 	min-height: 75px;
+	/*position: absolute;*/
 	left: 0;
 	right: 0;
-	top: 0;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: center;
 }
 
 footer li, footer a {
