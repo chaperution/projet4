@@ -121,7 +121,6 @@ function loginSubmit($pseudo, $pass) {
     		$_SESSION['id'] = $member['id'];
     		$_SESSION['pseudo'] = ucfirst(strtolower($pseudo));
     		$_SESSION['groups_id'] = $member['groups_id'];
-    		echo 'Vous êtes connecté !';
     		header('Location: index.php');
     	}
         else {
