@@ -28,7 +28,7 @@ h1 {
 #adminLoginFrame input[type="submit"], .listArticle p, .nbReports, #adminFrame p, #writePost a, td, th,
 #updateBlock input[type="submit"], #updateBlock input[type="text"], #updateBlock label,
 .modalContent p, .closeModal, .confirmDelete, #privacyFrame h2, #privacyFrame h3, #privacyFrame p,
-footer li, footer a, .cPageFrame, .pageBlock {
+footer li, footer a, .cPageFrame, .pageBlock, #updateDate {
 	font-family: 'Roboto', serif, 'Times New Roman';
 }
 
@@ -176,11 +176,18 @@ footer li, footer a, .cPageFrame, .pageBlock {
 	text-align: center;
 }
 
-.fullPost em {
-	font-style: italic;
-	float: right;
+#updateDate, .fullPost em {
 	color: #222f3e;
 	font-size: 1.1em;
+	font-style: italic;
+}
+
+#updateDate {
+	text-align: right;
+}
+
+.fullPost em {
+	float: right;
 }
 
 .commentBlock {

@@ -18,6 +18,7 @@
 		<meta property="og:url" content="http://jean-forteroche.charlotteperution.fr" />
 		<meta property="og:image" content="public/img/flavicon-book.png" />
 		<meta property="og:description" content="Blog publiant 'Billet simple pour l'Alaska' de Jean Forteroche" />
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 
 	<body>

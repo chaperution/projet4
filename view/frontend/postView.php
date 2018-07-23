@@ -11,7 +11,12 @@
 			</h3>
 		</div>
 		<div class="chapters"><?= nl2br($post['content']); ?></div>
-		<em>le <?= $post['date_fr']; ?></em>
+		<em>le <?= $post['date_fr']; ?></em><br />
+<?php 
+	if ($post['date_fr'] < $post['update_date_fr']) {
+		echo '<p id="updateDate">modifié le ' . $post['update_date_fr'] . '</p>';
+	}
+?>	
 	</div>
 
 	<div id="commentsFrame">

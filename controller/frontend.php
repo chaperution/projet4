@@ -79,27 +79,34 @@ function displaySubscribe() {
 function addMember($pseudo, $pass, $mail) {
 	$memberManager = new \projet4\Blog\Model\MemberManager();
 
-	$usernameValidity = $memberManager->checkPseudo($pseudo);
-	$mailValidity = $memberManager->checkMail($mail);
+	$reCaptcha = $memberManager->getReCaptcha($_POST['g-recaptcha-response']);
+	
+	if ($reCaptcha->success == true) {
+		$usernameValidity = $memberManager->checkPseudo($pseudo);
+		$mailValidity = $memberManager->checkMail($mail);
 
-	if ($usernameValidity) {
-		header('Location: index.php?action=subscribe&error=invalidUsername');	
+		if ($usernameValidity) {
+			header('Location: index.php?action=subscribe&error=invalidUsername');	
+		}
+
+		if ($mailValidity) {
+			header('Location: index.php?action=subscribe&error=invalidMail');
+		}
+
+		if (!$usernameValidity && !$mailValidity) {
+			// Hachage du mot de passe
+			$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+			
+			$newMember = $memberManager->createMember($pseudo, $pass, $mail);
+			
+			// redirige vers page d'accueil avec le nouveau paramètre
+			header('Location: index.php?account-status=account-successfully-created');
+		}	
+	} else {
+		header('Location: index.php?action=subscribe&error=google-recaptcha');
 	}
-
-	if ($mailValidity) {
-		header('Location: index.php?action=subscribe&error=invalidMail');
-	}
-
-
-	if (!$usernameValidity && !$mailValidity) {
-		// Hachage du mot de passe
-		$pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
-		
-		$newMember = $memberManager->createMember($pseudo, $pass, $mail);
-		
-		// redirige vers page d'accueil avec le nouveau paramètre
-		header('Location: index.php?account-status=account-successfully-created');
-	}	
+	
+	
 }
 
 function displayLogin() {

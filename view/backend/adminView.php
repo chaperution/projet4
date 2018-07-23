@@ -36,7 +36,12 @@ $title = "Panneau d'administration"; ?>
 						</div>
 					</div>
 				<a class="report" href="index.php?action=updatePost&amp;id=<?= $data['id']; ?>"><i class="fas fa-edit"></i></a>
-				<p><em><?= $data['date_fr']; ?></em></p>	
+				<p><em><?= $data['date_fr']; ?></em></p>
+<?php 
+	if ($data['date_fr'] < $data['update_date_fr']) {
+		echo '<p><em>modifié le ' . $data['update_date_fr'] . '</em></p>';
+	}
+?>	
 			</div>
 <?php
 		} else {

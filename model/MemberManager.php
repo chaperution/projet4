@@ -57,4 +57,18 @@ class MemberManager extends Manager
 
         return $deletedMember;
     }
+
+    public function getSecretKey() {
+        $secretKey = '6Lc_sGUUAAAAAPBrNhtKF69xInZVcBo9kTo-7_D8';
+
+        return $secretKey;
+    }
+
+    public function getReCaptcha($token) {
+        $secretKey = $this->getSecretKey();
+        $request = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secretKey . '&response=' . $token . '');
+        $response = json_decode($request);
+
+        return $response;
+    }
 }
