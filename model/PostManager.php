@@ -31,7 +31,7 @@ class PostManager extends Manager
 
     public function createPost($title, $content) {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW()), NOW()');
+        $req = $bdd->prepare('INSERT INTO posts(title, content, creation_date, update_date) VALUES (?, ?, NOW(), NOW())');
         $newPost = $req->execute(array($title, $content));
 
         return $newPost;

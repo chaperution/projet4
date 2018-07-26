@@ -1,16 +1,19 @@
 <?php
 
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/MemberManager.php');
-require_once('model/ReportManager.php');
-require_once('model/Pagination.php');
+// namespaces utilisés
+use \projet4\Blog\Model\Autoloader;
+use \projet4\Blog\Model\PostManager;
+use \projet4\Blog\Model\Pagination;
+use \projet4\Blog\Model\CommentManager;
+use \projet4\Blog\Model\ReportManager;
+use \projet4\Blog\Model\MemberManager;
 
+require_once 'model/Autoloader.php';
+Autoloader::register();
 
 function listPosts() {
-    $postManager = new \projet4\Blog\Model\PostManager();
-    $pagination = new \projet4\Blog\Model\Pagination();
-	$postManager = new \projet4\Blog\Model\PostManager();
+    $pagination = new Pagination();
+	$postManager = new PostManager();
 
 	$postsPerPage = 4;
 
@@ -31,9 +34,9 @@ function listPosts() {
 }
 
 function post() {
-    $postManager = new \projet4\Blog\Model\PostManager();
-    $commentManager = new \projet4\Blog\Model\CommentManager();
-    $reportManager = new \projet4\Blog\Model\ReportManager();
+    $postManager = new PostManager();
+    $commentManager = new CommentManager();
+    $reportManager = new ReportManager();
 
     $post = $postManager->getPost($_GET['id']);
 
@@ -52,7 +55,7 @@ function post() {
 }
 
 function addComment($postId, $author, $comment) {
-    $commentManager = new \projet4\Blog\Model\CommentManager();
+    $commentManager = new CommentManager();
 
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
@@ -65,7 +68,7 @@ function addComment($postId, $author, $comment) {
 }
 
 function postReport($postId, $commentId, $memberId) {
-	$reportManager = new \projet4\Blog\Model\ReportManager();
+	$reportManager = new ReportManager();
 
 	$reported = $reportManager->postReports($commentId, $memberId);
 
@@ -77,7 +80,7 @@ function displaySubscribe() {
 }
 
 function addMember($pseudo, $pass, $mail) {
-	$memberManager = new \projet4\Blog\Model\MemberManager();
+	$memberManager = new MemberManager();
 
 	$reCaptcha = $memberManager->getReCaptcha($_POST['g-recaptcha-response']);
 	
@@ -114,7 +117,7 @@ function displayLogin() {
 }
 
 function loginSubmit($pseudo, $pass) {
-	$memberManager = new \projet4\Blog\Model\MemberManager();
+	$memberManager = new MemberManager();
 
 	$member = $memberManager->loginMember($pseudo);
 

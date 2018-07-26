@@ -1,8 +1,14 @@
 <?php
 
-//require_once();
-require_once('model/PostManager.php');
-require_once('model/Pagination.php');
+// namespaces utilisés
+use \projet4\Blog\Model\PostManager;
+use \projet4\Blog\Model\Pagination;
+use \projet4\Blog\Model\CommentManager;
+use \projet4\Blog\Model\ReportManager;
+use \projet4\Blog\Model\MemberManager;
+
+require_once 'model/Autoloader.php';
+projet4\Blog\Model\Autoloader::register();
 
 function displayLoginAdmin() {
 	require('view/frontend/adminLoginView.php');
@@ -17,10 +23,10 @@ function loginAdmin() {
 }
 
 function displayAdmin() {
-	$postManager = new \projet4\Blog\Model\PostManager(); 
-	$reportManager = new \projet4\Blog\Model\ReportManager();
-	$memberManager = new \projet4\Blog\Model\MemberManager();
-	$pagination = new \projet4\Blog\Model\Pagination();
+	$postManager = new PostManager(); 
+	$reportManager = new ReportManager();
+	$memberManager = new MemberManager();
+	$pagination = new Pagination();
 
 	$postsPerPage = 6;
 
@@ -44,14 +50,14 @@ function displayAdmin() {
 }
 
 function displayUpdate() {
-	$postManager = new \projet4\Blog\Model\PostManager();
+	$postManager = new PostManager();
 
 	$post = $postManager->getPost($_GET['id']);
 	require('view/backend/updatePostView.php');
 }
 
 function submitUpdate($title, $content, $postId) {
-	$postManager = new \projet4\Blog\Model\PostManager();
+	$postManager = new PostManager();
 	
 	$updated = $postManager->updatePost($title, $content, $postId);
 
@@ -63,7 +69,7 @@ function displayCreatePost() {
 }
 
 function newPost($title, $content) {
-	$postManager = new \projet4\Blog\Model\PostManager();
+	$postManager = new PostManager();
 
 	$newPost = $postManager->createPost($title, $content);
 
@@ -71,7 +77,7 @@ function newPost($title, $content) {
 }
 
 function removePost($postId) {
-	$postManager = new \projet4\Blog\Model\PostManager();
+	$postManager = new PostManager();
 
 	$deletedPost = $postManager->deletePost($postId);
 
@@ -79,7 +85,7 @@ function removePost($postId) {
 }
 
 function removeComment($commentId) {
-	$commentManager = new \projet4\Blog\Model\CommentManager();
+	$commentManager = new CommentManager();
 
 	$deletedComment = $commentManager->deleteComment($commentId);
 
@@ -87,7 +93,7 @@ function removeComment($commentId) {
 }
 
 function removeMember($memberId) {
-	$memberManager = new \projet4\Blog\Model\MemberManager();
+	$memberManager = new MemberManager();
 
 	$deletedMember = $memberManager->deleteMember($memberId);
 
