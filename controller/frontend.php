@@ -1,14 +1,14 @@
 <?php
 
 // namespaces utilisés
-use \projet4\Blog\Model\Autoloader;
-use \projet4\Blog\Model\PostManager;
-use \projet4\Blog\Model\Pagination;
-use \projet4\Blog\Model\CommentManager;
-use \projet4\Blog\Model\ReportManager;
-use \projet4\Blog\Model\MemberManager;
+use \projet4\Blog\Autoloader;
+use \projet4\Blog\PostManager;
+use \projet4\Blog\Pagination;
+use \projet4\Blog\CommentManager;
+use \projet4\Blog\ReportManager;
+use \projet4\Blog\MemberManager;
 
-require_once 'model/Autoloader.php';
+require_once 'Autoloader.php';
 Autoloader::register();
 
 function listPosts() {

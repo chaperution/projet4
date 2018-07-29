@@ -1,6 +1,6 @@
 <?php
 
-namespace projet4\Blog\Model;
+namespace projet4\Blog;
 
 require_once("model/Manager.php");
 

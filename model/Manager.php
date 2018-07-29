@@ -1,5 +1,5 @@
 <?php
-namespace projet4\Blog\Model;
+namespace projet4\Blog;
 
 class Manager {
 	protected function dbConnect()
